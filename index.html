@@ -909,12 +909,13 @@
     fd.delete('interest');
     fd.append('interest', interests.length ? interests.join('、') : '—');
 
-    // no key pasted yet — behave as before and send nothing
-    if (!WEB3FORMS_KEY || WEB3FORMS_KEY === 'ad80b831-e34d-49b6-91bc-472ca6e37420'){
-      say('formSuccess', 'ok');
-      form.reset();
+    // fail loudly rather than pretending to have sent something
+    if (!WEB3FORMS_KEY || WEB3FORMS_KEY === 'YOUR_ACCESS_KEY_HERE'){
+      console.error('[M&W form] No Web3Forms access key set in index.html — nothing was sent.');
+      say('formError', 'err');
       return;
     }
+    console.info('[M&W form] Using key ending in …' + WEB3FORMS_KEY.slice(-6));
 
     fd.append('access_key', WEB3FORMS_KEY);
     fd.append('subject', 'M&W website enquiry — ' + (fd.get('name') || ''));
