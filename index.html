@@ -243,6 +243,9 @@
   .checks input{width:16px;height:16px;}
   .form-msg{margin-top:14px;font-size:14px;display:none;}
   .form-msg.ok{color:#2c7a4b;display:block;}
+  .form-msg.pending{color:var(--ink-soft);display:block;}
+  .form-msg.err{color:#b3261e;display:block;}
+  #submitBtn[disabled]{opacity:.55;cursor:not-allowed;transform:none;}
 
   .contact-info{background:var(--navy-deep);color:#fff;padding:38px 32px;border-radius:4px;height:fit-content;}
   .contact-info .logo-text .en{color:#fff;}
@@ -251,6 +254,8 @@
   .contact-info .ci-line{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;margin-bottom:16px;color:rgba(255,255,255,.85);}
   .contact-info .ic{width:18px;height:18px;flex:none;margin-top:2px;color:var(--gold-soft);}
   .contact-info a.ln{display:inline-flex;align-items:center;gap:8px;margin-top:10px;font-weight:600;color:#fff;}
+
+  .hp{position:absolute;left:-9999px;opacity:0;height:0;width:0;}
 
   /* Footer */
   footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:64px 0 28px;}
@@ -650,7 +655,9 @@
           <label><input type="checkbox" name="interest" value="餐飲與生活體驗"><span data-i18n="tag4">餐飲與生活體驗</span></label>
           <label><input type="checkbox" name="interest" value="其他"><span data-i18n="tagOther">其他</span></label>
         </div>
-        <button class="btn btn-primary" type="submit"><span data-i18n="submitBtn">送出訊息</span> <span class="arrow">→</span></button>
+        <!-- spam trap: hidden from people, tempting to bots -->
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-primary" id="submitBtn" type="submit"><span data-i18n="submitBtn">送出訊息</span> <span class="arrow">→</span></button>
         <p id="formMsg" class="form-msg" role="status"></p>
       </form>
     </div>
@@ -754,7 +761,7 @@
       contactH2:"開始對話", contactSub:"告訴我們您的品牌、產品或市場需求，我們將盡快與您聯繫。",
       lblName:"姓名", phName:"請輸入您的姓名", lblCompany:"公司名稱", phCompany:"請輸入公司名稱",
       lblEmail:"電子郵件", phEmail:"請輸入電子郵件", lblMessage:"訊息", phMessage:"請描述您的需求與合作想法",
-      lblInterest:"我有興趣於", submitBtn:"送出訊息", formSuccess:"感謝您的訊息，我們將盡快與您聯繫。",
+      lblInterest:"我有興趣於", submitBtn:"送出訊息", formSuccess:"感謝您的訊息，我們將盡快與您聯繫。", formSending:"傳送中…", formError:"傳送失敗，請稍後再試，或直接來信 info@mnw-intl.com。",
       ciAddress:"台北・台灣",
       footerTagline:"國際消費品開發、代理與市場拓展夥伴。",
       fCompanyOverview:"公司介紹", fTeamVision:"團隊與願景", fPetiteDiary:"超纖日記 Petite Diary",
@@ -809,7 +816,7 @@
       contactH2:"Start a Conversation", contactSub:"Tell us about your brand, product, or market needs, and we'll be in touch soon.",
       lblName:"Name", phName:"Enter your name", lblCompany:"Company", phCompany:"Enter your company name",
       lblEmail:"Email", phEmail:"Enter your email", lblMessage:"Message", phMessage:"Describe your needs or partnership idea",
-      lblInterest:"I'm interested in", submitBtn:"Send Message", formSuccess:"Thank you for your message — we'll be in touch soon.",
+      lblInterest:"I'm interested in", submitBtn:"Send Message", formSuccess:"Thank you for your message — we'll be in touch soon.", formSending:"Sending…", formError:"Something went wrong. Please try again, or email us at info@mnw-intl.com.",
       ciAddress:"Taipei, Taiwan",
       footerTagline:"Your partner for international consumer goods development, distribution, and market expansion.",
       fCompanyOverview:"Company Overview", fTeamVision:"Team &amp; Vision", fPetiteDiary:"Petite Diary 超纖日記",
@@ -874,16 +881,66 @@
     a.addEventListener('click', () => { mobileNav.style.display = 'none'; toggle.setAttribute('aria-expanded','false'); });
   });
 
-  // Contact form (front-end only — wire to your backend / email service)
+  // ---------- Contact form ----------
+  // ====== THE ONLY THING YOU NEED TO EDIT ======
+  // Get a free key from https://web3forms.com — type in info@mnw-intl.com,
+  // they email you a key. Paste it between the quotes below. That's it.
+  // Until a key is pasted, the form quietly does nothing (safe to leave).
+  const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY_HERE';
+  // =============================================
+
   const form = document.getElementById('contactForm');
-  const msg = document.getElementById('formMsg');
-  form.addEventListener('submit', (e) => {
+  const msg  = document.getElementById('formMsg');
+  const submitBtn = document.getElementById('submitBtn');
+
+  function currentLang(){ return document.documentElement.lang === 'en' ? 'en' : 'zh'; }
+  function say(key, state){
+    msg.textContent = translations[currentLang()][key];
+    msg.className = 'form-msg ' + state;
+  }
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
-    const currentLang = document.documentElement.lang === 'en' ? 'en' : 'zh';
-    msg.textContent = translations[currentLang].formSuccess;
-    msg.className = 'form-msg ok';
-    form.reset();
+
+    const fd = new FormData(form);
+    // roll the interest checkboxes into one readable line
+    const interests = fd.getAll('interest');
+    fd.delete('interest');
+    fd.append('interest', interests.length ? interests.join('、') : '—');
+
+    // no key pasted yet — behave as before and send nothing
+    if (!WEB3FORMS_KEY || WEB3FORMS_KEY === 'ad80b831-e34d-49b6-91bc-472ca6e37420'){
+      say('formSuccess', 'ok');
+      form.reset();
+      return;
+    }
+
+    fd.append('access_key', WEB3FORMS_KEY);
+    fd.append('subject', 'M&W website enquiry — ' + (fd.get('name') || ''));
+    fd.append('from_name', 'M&W International website');
+
+    submitBtn.disabled = true;
+    say('formSending', 'pending');
+
+    try {
+      const res  = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: fd
+      });
+      const data = await res.json();
+      if (res.ok && data.success){
+        say('formSuccess', 'ok');
+        form.reset();
+      } else {
+        say('formError', 'err');
+      }
+    } catch (err) {
+      say('formError', 'err');
+    } finally {
+      submitBtn.disabled = false;
+    }
   });
 </script>
 </body>
