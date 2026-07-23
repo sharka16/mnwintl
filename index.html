@@ -886,7 +886,7 @@
   // Get a free key from https://web3forms.com — type in info@mnw-intl.com,
   // they email you a key. Paste it between the quotes below. That's it.
   // Until a key is pasted, the form quietly does nothing (safe to leave).
-  const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY_HERE';
+  const WEB3FORMS_KEY = 'ad80b831-e34d-49b6-91bc-472ca6e37420';
   // =============================================
 
   const form = document.getElementById('contactForm');
@@ -910,7 +910,7 @@
     fd.append('interest', interests.length ? interests.join('、') : '—');
 
     // fail loudly rather than pretending to have sent something
-    if (!WEB3FORMS_KEY || WEB3FORMS_KEY === 'ad80b831-e34d-49b6-91bc-472ca6e37420'){
+    if (!WEB3FORMS_KEY || WEB3FORMS_KEY === 'YOUR_ACCESS_KEY_HERE'){
       console.error('[M&W form] No Web3Forms access key set in index.html — nothing was sent.');
       say('formError', 'err');
       return;
