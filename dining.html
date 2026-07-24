@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">餐飲與生活體驗｜M&amp;W International</title>
+<meta id="pageDesc" name="description" content="M&W International 引進日本頂尖餐飲與甜點品牌，將完整的品牌體驗帶進台灣市場。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="brand.css">
+<style>
+  :root{--accent:#8a5a3b;}
+
+  /* hero without artwork — typographic, on deep navy */
+  .dining-hero{background:linear-gradient(150deg,#0b1730 0%,#152a4e 55%,#25406e 100%);color:#fff;padding:104px 0 96px;position:relative;overflow:hidden;}
+  .dining-hero::after{content:"";position:absolute;right:-160px;top:-120px;width:620px;height:620px;border-radius:50%;
+    background:radial-gradient(circle,rgba(185,138,74,.22) 0%,rgba(185,138,74,0) 68%);pointer-events:none;}
+  .dining-hero .eyebrow{color:var(--gold-soft);}
+  .dining-hero h1{font-size:clamp(30px,4.2vw,50px);font-weight:600;line-height:1.25;margin-bottom:20px;max-width:14em;}
+  .dining-hero p{color:rgba(255,255,255,.8);font-size:17px;max-width:620px;margin-bottom:14px;}
+
+  /* the three partner brands */
+  .partner{display:grid;grid-template-columns:300px 1fr;gap:44px;align-items:start;
+    padding:48px 0;border-bottom:1px solid var(--line);}
+  .partner:last-of-type{border-bottom:none;}
+  .partner-logo{
+    aspect-ratio:3/2;border:1px solid var(--line);border-radius:6px;background:#fff;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:10px;padding:24px;text-align:center;
+  }
+  .partner-logo img{max-width:100%;max-height:100%;object-fit:contain;}
+  .partner-logo .slot-name{font-family:'Noto Serif TC',serif;font-size:19px;font-weight:600;color:var(--navy-deep);line-height:1.35;}
+  .partner-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+  .chip{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;
+    background:var(--paper-alt);color:var(--ink-soft);border:1px solid var(--line);padding:5px 11px;border-radius:20px;}
+  .chip.accent{background:#f4ece4;color:#7a4a2c;border-color:#e6d4c4;}
+  .partner h3{font-family:'Noto Serif TC',serif;font-size:clamp(21px,2.4vw,28px);color:var(--navy-deep);margin-bottom:6px;}
+  .partner .jp{font-size:14px;color:var(--ink-soft);margin-bottom:16px;letter-spacing:.04em;}
+  .partner p{font-size:15px;color:var(--ink-soft);margin-bottom:14px;}
+  .accolades{margin-top:18px;padding:20px 22px;background:var(--paper-alt);border-left:3px solid var(--gold);border-radius:0 4px 4px 0;}
+  .accolades h4{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;font-weight:700;}
+  .accolades li{font-size:14px;color:var(--ink-soft);padding-left:18px;position:relative;margin-bottom:8px;line-height:1.6;}
+  .accolades li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--gold);opacity:.6;}
+  .accolades li:last-child{margin-bottom:0;}
+
+  /* what we do */
+  .approach-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;}
+  .approach{padding-top:20px;border-top:2px solid var(--navy);}
+  .approach .num{font-family:'Noto Serif TC',serif;font-size:13px;color:var(--gold);font-weight:700;letter-spacing:.1em;margin-bottom:10px;}
+  .approach h4{font-size:16.5px;color:var(--navy-deep);margin-bottom:10px;font-weight:600;}
+  .approach p{font-size:14px;color:var(--ink-soft);}
+
+  @media (max-width:960px){
+    .partner{grid-template-columns:1fr;gap:26px;}
+    .partner-logo{max-width:300px;}
+    .approach-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:640px){
+    .dining-hero{padding:72px 0 64px;}
+    .approach-grid{grid-template-columns:1fr;}
+    .partner-logo{max-width:100%;}
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="skip">跳至主要內容</a>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html">
+      <img class="logo-img" src="mw-logo-cn.png" alt="M&amp;W International 巨林生化科技有限公司">
+    </a>
+    <nav class="primary" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html#about" data-i18n="navAbout">關於我們</a></li>
+        <li><a class="current" href="index.html#business" data-i18n="navBusiness">我們的事業</a></li>
+        <li><a href="index.html#brands" data-i18n="navBrands">品牌產品</a></li>
+        <li><a href="index.html#capabilities" data-i18n="navCapabilities">核心能力</a></li>
+        <li><a href="index.html#market" data-i18n="navMarket">市場布局</a></li>
+        <li><a href="index.html#contact" data-i18n="navContact">聯絡我們</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle" role="group" aria-label="Language / 語言">
+        <button type="button" id="langZh" class="active" aria-pressed="true">中文</button>
+        <button type="button" id="langEn" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-primary" href="index.html#contact"><span data-i18n="navCta">合作夥伴洽談</span> <span class="arrow">→</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <nav id="mobileNav" class="primary" aria-label="Mobile navigation" style="display:none;padding:0 32px 24px;">
+    <ul style="flex-direction:column;gap:18px;">
+      <li><a href="index.html#about" data-i18n="navAbout">關於我們</a></li>
+      <li><a href="index.html#business" data-i18n="navBusiness">我們的事業</a></li>
+      <li><a href="index.html#brands" data-i18n="navBrands">品牌產品</a></li>
+      <li><a href="index.html#capabilities" data-i18n="navCapabilities">核心能力</a></li>
+      <li><a href="index.html#market" data-i18n="navMarket">市場布局</a></li>
+      <li><a href="index.html#contact" data-i18n="navContact">聯絡我們</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ================= BREADCRUMB ================= -->
+<div class="crumb">
+  <div class="wrap">
+    <a href="index.html" data-i18n="crumbHome">首頁</a>
+    <span class="sep">/</span>
+    <a href="index.html#business" data-i18n="navBusiness">我們的事業</a>
+    <span class="sep">/</span>
+    <span data-i18n="pageName">餐飲與生活體驗</span>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="dining-hero">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="heroKicker">餐飲與生活體驗</span>
+    <h1 data-i18n="heroH1">把日本頂尖的餐飲品牌，<br>完整地帶到台灣</h1>
+    <p data-i18n="heroP1">我們引進的不只是產品，而是一整套品牌體驗——從食譜、原料、製程到門市營運與服務細節，力求在台灣重現品牌在日本的水準。</p>
+    <p data-i18n="heroP2">目前合作品牌橫跨拉麵、甜點與烘焙三個品類，皆為在日本市場擁有高度評價與獎項紀錄的名店。</p>
+  </div>
+</section>
+
+<!-- ================= INTRO ================= -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="introEyebrow">關於這項事業</span>
+      <h2 data-i18n="introH2">餐飲，是最直接的品牌溝通</h2>
+      <p data-i18n="introP">一杯咖啡、一碗拉麵、一塊甜點，都是消費者與品牌之間最直接的接觸點。M&amp;W 協助日本品牌跨越法規、供應鏈與在地口味的門檻，在台灣建立長期經營的據點。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PARTNER BRANDS ================= -->
+<section class="features" id="partners" style="padding-top:72px;">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="partnersEyebrow">合作品牌</span>
+      <h2 data-i18n="partnersH2">我們引進的品牌</h2>
+    </div>
+
+    <!-- ─────────── Tomita ─────────── -->
+    <!-- LOGO: replace the two <span> lines below with:
+         <img src="logo-tomita.png" alt="中華蕎麥 とみ田"> -->
+    <article class="partner">
+      <div class="partner-logo">
+        <span class="slot-name">中華蕎麥<br>とみ田</span>
+        <span class="ph" data-i18n="phLogo">LOGO 待補</span>
+      </div>
+      <div>
+        <div class="partner-meta">
+          <span class="chip" data-i18n="chipRamen">拉麵</span>
+          <span class="chip" data-i18n="chipChiba">千葉・松戶</span>
+          <span class="chip accent" data-i18n="chipSince2006">創立於 2006</span>
+        </div>
+        <h3 data-i18n="tomitaName">中華蕎麥 とみ田 Tomita</h3>
+        <p class="jp" data-i18n="tomitaSub">日本拉麵界的常勝軍，全面採預約制</p>
+        <p data-i18n="tomitaP1">位於千葉縣松戶市，開業以來以沾麵聞名，過去曾出現排隊長達四小時的盛況。因需求過於龐大，現已全面改為預約制，且開放後往往在數分鐘內額滿。</p>
+        <p data-i18n="tomitaP2">除了本店經營，也與 7-Eleven 等大型企業合作推出聯名商品，是日本最具代表性的拉麵品牌之一。</p>
+        <div class="accolades">
+          <h4 data-i18n="accoladesLabel">主要獲獎紀錄</h4>
+          <ul>
+            <li data-i18n="tomitaA1">「ラーメン日本一決定戰 2018」冠軍</li>
+            <li data-i18n="tomitaA2">拉麵業界權威「TRY 拉麵大賞」四年連霸，入選名人堂</li>
+            <li data-i18n="tomitaA3">日本拉麵資料庫「ラーメンデータベース」全國排名第一</li>
+            <li data-i18n="tomitaA4">食べログ 東日本拉麵百名店（2017–2023）</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- ─────────── Ken's Cafe Tokyo ─────────── -->
+    <!-- LOGO: replace the two <span> lines below with:
+         <img src="logo-kens-cafe.png" alt="Ken's Cafe Tokyo"> -->
+    <article class="partner">
+      <div class="partner-logo">
+        <span class="slot-name">Ken's Cafe<br>Tokyo</span>
+        <span class="ph" data-i18n="phLogo">LOGO 待補</span>
+      </div>
+      <div>
+        <div class="partner-meta">
+          <span class="chip" data-i18n="chipDessert">甜點</span>
+          <span class="chip" data-i18n="chipShinjuku">東京・新宿御苑前</span>
+          <span class="chip accent" data-i18n="chipSince1998">創立於 1998</span>
+        </div>
+        <h3 data-i18n="kensName">Ken's Cafe Tokyo</h3>
+        <p class="jp" data-i18n="kensSub">日本第一家法式巧克力蛋糕專門店</p>
+        <p data-i18n="kensP1">1998 年創立於東京新宿御苑前，是日本首間以 Gâteau Chocolat 為主軸的專門店。招牌「特選巧克力蛋糕」選用世界頂級巧克力製作，長年受到美食愛好者與名人推薦。</p>
+        <p data-i18n="kensP2">產品亦被選為贈予駐日五十餘國大使的禮品，知名度延伸至海外。</p>
+        <div class="accolades">
+          <h4 data-i18n="accoladesLabel">主要獲獎紀錄</h4>
+          <ul>
+            <li data-i18n="kensA1">食べログ 全國巧克力店排行第一，八年連續（2014–2021）</li>
+            <li data-i18n="kensA2">食べログ 東京甜點百名店（2017–2023）</li>
+            <li data-i18n="kensA3">Japan Gift Awards 2015 東京賞</li>
+            <li data-i18n="kensA4">JAPAN SWEETS AWARD 2016 TOP 50</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- ─────────── PRESS BUTTER SAND ─────────── -->
+    <!-- LOGO: replace the two <span> lines below with:
+         <img src="logo-press-butter-sand.svg" alt="PRESS BUTTER SAND"> -->
+    <article class="partner">
+      <div class="partner-logo">
+        <span class="slot-name">PRESS<br>BUTTER SAND</span>
+        <span class="ph" data-i18n="phLogo">LOGO 待補</span>
+      </div>
+      <div>
+        <div class="partner-meta">
+          <span class="chip" data-i18n="chipBakery">烘焙</span>
+          <span class="chip" data-i18n="chipTokyo">東京</span>
+          <span class="chip accent" data-i18n="chipBake">BAKE INC.</span>
+        </div>
+        <h3 data-i18n="pbsName">PRESS BUTTER SAND</h3>
+        <p class="jp" data-i18n="pbsSub">奶油夾心餅乾專門品牌</p>
+        <p data-i18n="pbsP1">來自日本 BAKE INC. 的奶油夾心餅乾專門品牌，以日本傳統「挾み燒き」烘烤工法製作餅乾，在口感與風味之間取得平衡。</p>
+        <p data-i18n="pbsP2">內餡由濃郁奶油餡與滑順焦糖奶油兩層次組成，是日本車站與百貨伴手禮通路的人氣品項。</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ================= OUR APPROACH ================= -->
+<section id="approach">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="approachEyebrow">我們的作法</span>
+      <h2 data-i18n="approachH2">從授權到開店的完整支援</h2>
+    </div>
+    <div class="approach-grid">
+      <div class="approach">
+        <div class="num">01</div>
+        <h4 data-i18n="ap1T">品牌授權洽談</h4>
+        <p data-i18n="ap1D">與日方確認授權範圍、品牌規範與合作條件，建立長期互信的合作架構。</p>
+      </div>
+      <div class="approach">
+        <div class="num">02</div>
+        <h4 data-i18n="ap2T">供應鏈與法規</h4>
+        <p data-i18n="ap2D">原料進口、食品法規查驗與標示合規，確保配方與品質能穩定重現。</p>
+      </div>
+      <div class="approach">
+        <div class="num">03</div>
+        <h4 data-i18n="ap3T">選址與門市規劃</h4>
+        <p data-i18n="ap3D">評估商圈與客群，規劃門市空間、動線與品牌視覺呈現。</p>
+      </div>
+      <div class="approach">
+        <div class="num">04</div>
+        <h4 data-i18n="ap4T">營運與人員訓練</h4>
+        <p data-i18n="ap4D">由日方技術指導導入製程與服務標準，並持續進行品質稽核。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="ctaEyebrow">合作洽談</span>
+    <h2 data-i18n="ctaH2">想與我們合作餐飲品牌？</h2>
+    <p data-i18n="ctaP">無論您是尋求進入台灣市場的海外品牌，或是有意合作的通路與投資夥伴，都歡迎與我們聯繫。</p>
+    <div class="cta-actions">
+      <a class="btn btn-ghost-white" href="index.html#contact"><span data-i18n="ctaBtn1">聯絡我們</span> <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="logo logo-on-dark" style="margin-bottom:16px;">
+          <img class="logo-img" src="mw-logo-en-white.png" alt="M&amp;W International">
+        </div>
+        <p style="font-size:13px;max-width:230px;color:rgba(255,255,255,.55);" data-i18n="footerTagline">國際消費品開發、代理與市場拓展夥伴。</p>
+      </div>
+      <div>
+        <h5 data-i18n="navAbout">關於我們</h5>
+        <ul>
+          <li><a href="index.html#about" data-i18n="fCompanyOverview">公司介紹</a></li>
+          <li><a href="index.html#about" data-i18n="fTeamVision">團隊與願景</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 data-i18n="navBusiness">我們的事業</h5>
+        <ul>
+          <li><a href="index.html#business" data-i18n="biz1Title">品牌開發</a></li>
+          <li><a href="index.html#business" data-i18n="biz2Title">通路代理</a></li>
+          <li><a href="index.html#business" data-i18n="biz3Title">市場進入</a></li>
+          <li><a href="dining.html" data-i18n="biz4Title">餐飲與生活體驗</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 data-i18n="navBrands">品牌產品</h5>
+        <ul>
+          <li><a href="djb.html">Daijoubu</a></li>
+          <li><a href="kundal.html">KUNDAL</a></li>
+          <li><a href="nacific.html">NACIFIC</a></li>
+          <li><a href="petite-diary.html" data-i18n="fPetiteDiary">超纖日記 Petite Diary</a></li>
+          <li><a href="plu.html">plu</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 data-i18n="navContact">聯絡我們</h5>
+        <ul>
+          <li><a href="index.html#contact" data-i18n="fPartnerInquiries">合作洽談</a></li>
+          <li><a href="index.html#contact" data-i18n="fContactInfo">聯絡資訊</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="copyright">© 2026 M&amp;W International. All rights reserved.</span>
+      <span data-i18n="footerAddr">巨林生化科技有限公司・台北，台灣</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.PAGE_I18N = {
+  "zh": {
+    "pageTitle": "餐飲與生活體驗｜M&W International",
+    "pageDesc": "M&W International 引進日本頂尖餐飲與甜點品牌，將完整的品牌體驗帶進台灣市場。",
+    "pageName": "餐飲與生活體驗",
+    "phLogo": "LOGO 待補",
+    "heroKicker": "餐飲與生活體驗",
+    "heroH1": "把日本頂尖的餐飲品牌，<br>完整地帶到台灣",
+    "heroP1": "我們引進的不只是產品，而是一整套品牌體驗——從食譜、原料、製程到門市營運與服務細節，力求在台灣重現品牌在日本的水準。",
+    "heroP2": "目前合作品牌橫跨拉麵、甜點與烘焙三個品類，皆為在日本市場擁有高度評價與獎項紀錄的名店。",
+    "introEyebrow": "關於這項事業",
+    "introH2": "餐飲，是最直接的品牌溝通",
+    "introP": "一杯咖啡、一碗拉麵、一塊甜點，都是消費者與品牌之間最直接的接觸點。M&W 協助日本品牌跨越法規、供應鏈與在地口味的門檻，在台灣建立長期經營的據點。",
+    "partnersEyebrow": "合作品牌",
+    "partnersH2": "我們引進的品牌",
+    "accoladesLabel": "主要獲獎紀錄",
+    "chipRamen": "拉麵", "chipChiba": "千葉・松戶", "chipSince2006": "創立於 2006",
+    "chipDessert": "甜點", "chipShinjuku": "東京・新宿御苑前", "chipSince1998": "創立於 1998",
+    "chipBakery": "烘焙", "chipTokyo": "東京", "chipBake": "BAKE INC.",
+    "tomitaName": "中華蕎麥 とみ田 Tomita",
+    "tomitaSub": "日本拉麵界的常勝軍，全面採預約制",
+    "tomitaP1": "位於千葉縣松戶市，開業以來以沾麵聞名，過去曾出現排隊長達四小時的盛況。因需求過於龐大，現已全面改為預約制，且開放後往往在數分鐘內額滿。",
+    "tomitaP2": "除了本店經營，也與 7-Eleven 等大型企業合作推出聯名商品，是日本最具代表性的拉麵品牌之一。",
+    "tomitaA1": "「ラーメン日本一決定戰 2018」冠軍",
+    "tomitaA2": "拉麵業界權威「TRY 拉麵大賞」四年連霸，入選名人堂",
+    "tomitaA3": "日本拉麵資料庫「ラーメンデータベース」全國排名第一",
+    "tomitaA4": "食べログ 東日本拉麵百名店（2017–2023）",
+    "kensName": "Ken's Cafe Tokyo",
+    "kensSub": "日本第一家法式巧克力蛋糕專門店",
+    "kensP1": "1998 年創立於東京新宿御苑前，是日本首間以 Gâteau Chocolat 為主軸的專門店。招牌「特選巧克力蛋糕」選用世界頂級巧克力製作，長年受到美食愛好者與名人推薦。",
+    "kensP2": "產品亦被選為贈予駐日五十餘國大使的禮品，知名度延伸至海外。",
+    "kensA1": "食べログ 全國巧克力店排行第一，八年連續（2014–2021）",
+    "kensA2": "食べログ 東京甜點百名店（2017–2023）",
+    "kensA3": "Japan Gift Awards 2015 東京賞",
+    "kensA4": "JAPAN SWEETS AWARD 2016 TOP 50",
+    "pbsName": "PRESS BUTTER SAND",
+    "pbsSub": "奶油夾心餅乾專門品牌",
+    "pbsP1": "來自日本 BAKE INC. 的奶油夾心餅乾專門品牌，以日本傳統「挾み燒き」烘烤工法製作餅乾，在口感與風味之間取得平衡。",
+    "pbsP2": "內餡由濃郁奶油餡與滑順焦糖奶油兩層次組成，是日本車站與百貨伴手禮通路的人氣品項。",
+    "approachEyebrow": "我們的作法",
+    "approachH2": "從授權到開店的完整支援",
+    "ap1T": "品牌授權洽談", "ap1D": "與日方確認授權範圍、品牌規範與合作條件，建立長期互信的合作架構。",
+    "ap2T": "供應鏈與法規", "ap2D": "原料進口、食品法規查驗與標示合規，確保配方與品質能穩定重現。",
+    "ap3T": "選址與門市規劃", "ap3D": "評估商圈與客群，規劃門市空間、動線與品牌視覺呈現。",
+    "ap4T": "營運與人員訓練", "ap4D": "由日方技術指導導入製程與服務標準，並持續進行品質稽核。",
+    "ctaEyebrow": "合作洽談",
+    "ctaH2": "想與我們合作餐飲品牌？",
+    "ctaP": "無論您是尋求進入台灣市場的海外品牌，或是有意合作的通路與投資夥伴，都歡迎與我們聯繫。",
+    "ctaBtn1": "聯絡我們"
+  },
+  "en": {
+    "pageTitle": "Dining & Lifestyle | M&W International",
+    "pageDesc": "M&W International brings leading Japanese dining and confectionery brands to the Taiwanese market, experience intact.",
+    "pageName": "Dining & Lifestyle",
+    "phLogo": "LOGO TBC",
+    "heroKicker": "Dining & Lifestyle",
+    "heroH1": "Bringing Japan's finest food brands<br>to Taiwan, intact",
+    "heroP1": "What we import isn't just a product — it's the whole brand experience. Recipes, ingredients, process, store operations and the details of service, all reproduced to the standard the brand holds in Japan.",
+    "heroP2": "Our current partners span ramen, patisserie and baked confectionery, each with a strong reputation and awards record in the Japanese market.",
+    "introEyebrow": "About This Business",
+    "introH2": "Food Is The Most Direct Form Of Brand Communication",
+    "introP": "A cup of coffee, a bowl of ramen, a piece of cake — each is the most direct point of contact between a person and a brand. M&W helps Japanese brands clear the regulatory, supply chain and local-taste hurdles needed to build something lasting in Taiwan.",
+    "partnersEyebrow": "Partner Brands",
+    "partnersH2": "The Brands We Represent",
+    "accoladesLabel": "Selected Accolades",
+    "chipRamen": "Ramen", "chipChiba": "Matsudo, Chiba", "chipSince2006": "Est. 2006",
+    "chipDessert": "Patisserie", "chipShinjuku": "Shinjuku Gyoenmae, Tokyo", "chipSince1998": "Est. 1998",
+    "chipBakery": "Baked Confectionery", "chipTokyo": "Tokyo", "chipBake": "BAKE INC.",
+    "tomitaName": "Chuka Soba Tomita",
+    "tomitaSub": "A perennial champion of Japanese ramen, now reservation-only",
+    "tomitaP1": "Based in Matsudo City, Chiba Prefecture, Tomita built its reputation on tsukemen, at one point drawing queues of up to four hours. Demand grew so heavy that the shop moved to a fully reservation-based system, where slots typically sell out within minutes of release.",
+    "tomitaP2": "Alongside its own restaurant, Tomita has collaborated with major corporations including Seven-Eleven, and is regarded as one of Japan's definitive ramen brands.",
+    "tomitaA1": "Winner, Ramen Japan Championship 2018",
+    "tomitaA2": "Four consecutive wins at the TRY Ramen Grand Prize, with Hall of Fame recognition",
+    "tomitaA3": "Ranked first nationally on the Ramen Database",
+    "tomitaA4": "Tabelog Top 100 ramen shops, East Japan (2017–2023)",
+    "kensName": "Ken's Cafe Tokyo",
+    "kensSub": "Japan's first specialty gâteau chocolat shop",
+    "kensP1": "Founded in 1998 in Shinjuku Gyoenmae, Tokyo, Ken's Cafe was the first shop in Japan dedicated to gâteau chocolat. Its signature cake is made with some of the world's finest chocolate and has drawn lasting praise from dessert enthusiasts and public figures alike.",
+    "kensP2": "The cake has also been chosen as a gift for ambassadors from more than fifty countries based in Japan, carrying its reputation well beyond the domestic market.",
+    "kensA1": "Ranked Japan's number one chocolate shop on Tabelog for eight consecutive years (2014–2021)",
+    "kensA2": "Tabelog Top 100 sweets shops in Tokyo (2017–2023)",
+    "kensA3": "Tokyo Award, Japan Gift Awards 2015",
+    "kensA4": "Top 50, Japan Sweets Award 2016",
+    "pbsName": "PRESS BUTTER SAND",
+    "pbsSub": "A specialist in butter sandwich cookies",
+    "pbsP1": "A butter sandwich cookie brand from Japan's BAKE INC., baked using the traditional Japanese hasami-yaki method to strike a balance between texture and flavour.",
+    "pbsP2": "The filling pairs a rich buttercream layer with a smooth butter caramel, and the product has become a staple of Japan's station and department store gift channels.",
+    "approachEyebrow": "Our Approach",
+    "approachH2": "From Licensing Through To Opening Day",
+    "ap1T": "Licensing", "ap1D": "Agreeing scope, brand standards and terms with the Japanese principal, on a footing built for the long term.",
+    "ap2T": "Supply Chain & Compliance", "ap2D": "Ingredient importation, food regulatory clearance and labelling compliance, so the recipe and its quality reproduce reliably.",
+    "ap3T": "Site & Store Planning", "ap3D": "Assessing catchment and customer profile, then planning the space, flow and visual presentation of the store.",
+    "ap4T": "Operations & Training", "ap4D": "Process and service standards introduced under technical guidance from Japan, with ongoing quality auditing.",
+    "ctaEyebrow": "Partnership",
+    "ctaH2": "Looking to bring a food brand to Taiwan?",
+    "ctaP": "Whether you're an overseas brand seeking entry to the Taiwanese market, or a channel or investment partner, we'd be glad to hear from you.",
+    "ctaBtn1": "Contact Us"
+  }
+};
+</script>
+<script src="brand.js"></script>
+</body>
+</html>
