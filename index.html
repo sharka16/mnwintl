@@ -924,20 +924,33 @@
     submitBtn.disabled = true;
     say('formSending', 'pending');
 
+    // log what we're actually sending, so problems are visible in the console
+    const sent = {};
+    fd.forEach((v, k) => { sent[k] = (k === 'access_key') ? '…' + String(v).slice(-6) : v; });
+    console.info('[M&W form] sending →', sent);
+
     try {
       const res  = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Accept': 'application/json' },
         body: fd
       });
-      const data = await res.json();
-      if (res.ok && data.success){
+      const raw  = await res.text();
+      console.info('[M&W form] HTTP ' + res.status + ' ' + res.statusText);
+      console.info('[M&W form] reply ←', raw);
+
+      let data = null;
+      try { data = JSON.parse(raw); } catch (e) {}
+
+      if (res.ok && data && data.success){
         say('formSuccess', 'ok');
         form.reset();
       } else {
+        console.error('[M&W form] rejected:', (data && data.message) || raw);
         say('formError', 'err');
       }
     } catch (err) {
+      console.error('[M&W form] request failed:', err);
       say('formError', 'err');
     } finally {
       submitBtn.disabled = false;
