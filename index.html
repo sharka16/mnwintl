@@ -245,6 +245,28 @@
   .checks{display:flex;flex-wrap:wrap;gap:10px 22px;margin:6px 0 26px;font-size:14px;color:var(--ink-soft);}
   .checks label{display:flex;align-items:center;gap:8px;font-weight:400;font-size:14px;color:var(--ink);margin:0;}
   .checks input{width:16px;height:16px;}
+  /* Dining brands strip inside Our Brands */
+  .dining-strip{display:block;margin-top:26px;padding:34px 32px;border-radius:8px;text-decoration:none;
+    background:linear-gradient(135deg,#0d1c37 0%,#152a4e 58%,#25406e 100%);color:#fff;
+    transition:transform .3s ease, box-shadow .3s ease;}
+  .dining-strip:hover{transform:translateY(-4px);box-shadow:0 18px 38px rgba(21,42,78,.22);}
+  .dining-strip-top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:26px;}
+  .dining-strip .kicker{display:block;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--gold-soft);font-weight:600;margin-bottom:9px;}
+  .dining-strip h3{font-family:'Noto Serif TC',serif;font-size:clamp(19px,2.1vw,25px);font-weight:600;margin-bottom:9px;}
+  .dining-strip p{font-size:14.5px;color:rgba(255,255,255,.8);max-width:560px;line-height:1.7;}
+  .dining-strip .biz-link{color:#fff;border-bottom:1px solid rgba(255,255,255,.45);padding-bottom:3px;white-space:nowrap;}
+  .dining-strip:hover .biz-link{border-bottom-color:#fff;}
+  .dining-strip:hover .biz-link .arrow{transform:translateX(4px);}
+  .dining-logos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .dining-logo{background:#fff;border-radius:5px;height:104px;display:flex;align-items:center;justify-content:center;padding:18px 22px;}
+  .dining-logo.on-dark{background:#111;}
+  .dining-logo img{max-width:100%;max-height:100%;object-fit:contain;}
+  @media (max-width:640px){
+    .dining-strip{padding:26px 20px;}
+    .dining-logos{grid-template-columns:1fr;}
+    .dining-logo{height:88px;}
+  }
   .form-msg{margin-top:14px;font-size:14px;display:none;}
   .form-msg.ok{color:#2c7a4b;display:block;}
   .form-msg.pending{color:var(--ink-soft);display:block;}
@@ -518,6 +540,21 @@
         <div class="cobrand-text"><b>Tiger Air Lemon+C</b><span data-i18n="cobrandTigerair">台灣虎航機上供應的飲品</span></div>
       </div>
     </div>
+    <a class="dining-strip" href="dining.html">
+      <div class="dining-strip-top">
+        <div>
+          <span class="kicker" data-i18n="diningStripKicker">餐飲與生活體驗</span>
+          <h3 data-i18n="diningStripH3">我們也把日本頂尖的餐飲品牌帶進台灣</h3>
+          <p data-i18n="diningStripP">除了架上的消費品，我們也引進日本備受肯定的拉麵、甜點與烘焙品牌，從食譜、原料到門市營運完整導入。</p>
+        </div>
+        <span class="biz-link"><span data-i18n="diningStripLink">探索餐飲與生活體驗</span> <span class="arrow">→</span></span>
+      </div>
+      <div class="dining-logos">
+        <div class="dining-logo"><img src="logo-tomita.png" alt="中華蕎麥 とみ田"></div>
+        <div class="dining-logo"><img src="logo-kens-cafe.png" alt="Ken's Cafe Tokyo"></div>
+        <div class="dining-logo on-dark"><img src="logo-press-butter-sand.png" alt="PRESS BUTTER SAND"></div>
+      </div>
+    </a>
     <div style="margin-top:40px;">
       <a class="more" href="#contact" style="color:var(--navy);"><span data-i18n="brandsMore">探索更多品牌</span> <span class="arrow">→</span></a>
     </div>
@@ -752,6 +789,7 @@
       nacificDesc:"NACIFIC 以天然植萃為核心，打造溫和且有效的肌膚保養方案，讓每日護膚成為安心的享受。", nacificLink:"探索 NACIFIC",
       pluDesc:"plu 以草本香氛與天然成分，打造沐浴與身體保養的儀式感，讓日常清潔成為療癒時刻。", pluLink:"探索 plu",
       brandsMore:"探索更多品牌",
+      diningStripKicker:"餐飲與生活體驗", diningStripH3:"我們也把日本頂尖的餐飲品牌帶進台灣", diningStripP:"除了架上的消費品，我們也引進日本備受肯定的拉麵、甜點與烘焙品牌，從食譜、原料到門市營運完整導入。", diningStripLink:"探索餐飲與生活體驗",
       cobrandLabel:"同時也為其他品牌打造聯名飲品",
       cobrandGogoro:"Gogoro 贈送給顧客的宣傳飲品",
       cobrandTigerair:"台灣虎航機上供應的飲品",
@@ -807,6 +845,7 @@
       nacificDesc:"NACIFIC is built on naturally derived actives, creating skincare that is gentle yet effective — everyday care you can trust.", nacificLink:"Explore NACIFIC",
       pluDesc:"plu blends herbal fragrance with natural ingredients, turning everyday bathing and body care into a moment of ritual.", pluLink:"Explore plu",
       brandsMore:"Explore More Brands",
+      diningStripKicker:"Dining & Lifestyle", diningStripH3:"We also bring Japan's leading food brands to Taiwan", diningStripP:"Beyond the products on the shelf, we represent celebrated Japanese ramen, patisserie and bakery brands — brought over whole, from recipe and ingredients through to store operations.", diningStripLink:"Explore Dining & Lifestyle",
       cobrandLabel:"We also craft co-branded drinks for other companies",
       cobrandGogoro:"A promotional drink Gogoro gave out to their customers",
       cobrandTigerair:"Served on Tiger Air flights",
