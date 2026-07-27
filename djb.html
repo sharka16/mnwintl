@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title id="pageTitle">Daijoubu｜M&amp;W International</title>
-<meta id="pageDesc" name="description" content="Daijoubu — 由 M&amp;W International 開發與經營的自有品牌，旗下 DJB Energy 為零糖、天然來源的日常能量飲品。">
+<meta id="pageDesc" name="description" content="Daijoubu — 由 M&amp;W International 開發與經營的自有品牌，旗下 DJB Energy 為天然來源咖啡因的日常能量飲品。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -164,11 +164,25 @@ nav.primary a.current::after{width:100%;background:var(--accent);}
 }
 .product-card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(21,42,78,.12);}
 .product-thumb{
-  aspect-ratio:4/3;background:var(--paper-alt);
+  aspect-ratio:1/1;background:var(--paper-alt);
   display:flex;align-items:center;justify-content:center;
   color:var(--ink-soft);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
-  border-bottom:1px solid var(--line);
+  border-bottom:1px solid var(--line);overflow:hidden;
 }
+.product-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+.product-thumb.contain{background:#fff;padding:14px;}
+.product-thumb.contain img{object-fit:contain;}
+/* collaborations */
+.collab-wrap{margin-top:16px;}
+.collab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.collab-card{display:flex;gap:18px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:6px;padding:18px 20px;}
+.collab-thumb{flex:none;width:70px;height:92px;background:var(--paper-alt);border-radius:4px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.collab-thumb img{max-width:100%;max-height:100%;object-fit:contain;}
+.collab-text .tag{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;}
+.collab-text h4{font-size:16px;font-weight:600;color:var(--navy-deep);margin:5px 0 4px;}
+.collab-text p{font-size:13px;color:var(--ink-soft);}
+@media (max-width:900px){.collab-grid{grid-template-columns:1fr 1fr;}}
+@media (max-width:640px){.collab-grid{grid-template-columns:1fr;}}
 .product-body{padding:22px 20px 26px;flex:1;display:flex;flex-direction:column;}
 .product-body .tag{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:8px;}
 .product-body h3{font-size:17px;font-weight:600;color:var(--navy-deep);margin-bottom:10px;}
@@ -182,17 +196,16 @@ nav.primary a.current::after{width:100%;background:var(--accent);}
 .feature p{font-size:14px;color:var(--ink-soft);}
 
 /* ---------- specs table ---------- */
-.spec-table{width:100%;border-collapse:collapse;font-size:14.5px;}
-.spec-table th,.spec-table td{text-align:left;padding:16px 18px;border-bottom:1px solid var(--line);}
-.spec-table th{width:32%;color:var(--navy-deep);font-weight:600;background:var(--paper-alt);}
-.spec-table td{color:var(--ink-soft);}
 
 /* ---------- channels ---------- */
 .channel-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
 .channel{
   border:1px solid var(--line);background:#fff;border-radius:4px;
   padding:22px 18px;text-align:center;font-size:14px;color:var(--ink-soft);
+  text-decoration:none;transition:border-color .25s ease, transform .25s ease;
 }
+a.channel:hover{border-color:var(--accent);transform:translateY(-3px);}
+a.channel b{color:var(--navy-deep);}
 .channel b{display:block;color:var(--navy-deep);font-size:15px;margin-bottom:4px;}
 
 /* ---------- CTA band ---------- */
@@ -253,7 +266,7 @@ footer ul a:hover{color:#fff;}
   .lineup-grid{grid-template-columns:1fr;}
   .channel-row{grid-template-columns:1fr;}
   .siblings{grid-template-columns:1fr;}
-  .spec-table th{width:40%;}
+  
 }
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto;}
@@ -326,7 +339,7 @@ footer ul a:hover{color:#fff;}
     <div class="brand-hero-copy">
       <span class="eyebrow" data-i18n="heroKicker">純淨能量 Clean Energy</span>
       <h1 data-i18n-html="heroH1">Daijoubu</h1>
-      <p class="lede" data-i18n="heroLede">零糖配方、天然來源咖啡因，為現代生活節奏設計的每日能量補給。</p>
+      <p class="lede" data-i18n="heroLede">天然來源咖啡因、簡單俐落，為現代生活節奏設計的每日能量補給。</p>
       <div class="hero-actions">
         <a class="btn btn-accent" href="#lineup"><span data-i18n="lineupH2">產品陣容</span> <span class="arrow">→</span></a>
         <a class="btn btn-outline" href="index.html#contact"><span data-i18n="navCta">合作夥伴洽談</span> <span class="arrow">→</span></a>
@@ -349,54 +362,87 @@ footer ul a:hover{color:#fff;}
         <div class="icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
         </div>
-        <p data-i18n="storyBox">零糖、天然來源咖啡因，330ml 隨手瓶身，適合工作、運動與日常提神。</p>
+        <p data-i18n="storyBox">天然來源咖啡因，330ml 隨手瓶身，適合工作、運動與日常提神。</p>
       </aside>
     </div>
   </div>
 </section>
 
 <!-- ================= PRODUCT LINEUP ================= -->
-<!-- SCAFFOLD: replace the four product cards with real products + photography -->
 <section id="lineup">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow" data-i18n="lineupEyebrow">產品系列</span>
       <h2 data-i18n="lineupH2">產品陣容</h2>
-      <p data-i18n="lineupSub">以下為產品版位範例，實際品項與圖片待補。</p>
+      <p data-i18n="lineupSub">Daijoubu 旗下橫跨能量、機能與純淨飲品，滿足不同場景的日常需求。</p>
     </div>
     <div class="lineup-grid">
       <article class="product-card">
-        <div class="product-thumb"><span data-i18n="phLabel">待補</span></div>
+        <div class="product-thumb contain"><img src="djb_can_2026.png" alt="DJB Energy"></div>
         <div class="product-body">
           <span class="tag">01</span>
           <h3 data-i18n="p1T">DJB Energy</h3>
-          <p data-i18n="p1D">品牌核心產品線，零糖能量飲。</p>
+          <p data-i18n="p1D">品牌核心產品線，天然來源咖啡因的能量飲。</p>
         </div>
       </article>
       <article class="product-card">
-        <div class="product-thumb"><span data-i18n="phLabel">待補</span></div>
+        <div class="product-thumb"><img src="product-lemonc.jpg" alt="DJB Lemon +C"></div>
         <div class="product-body">
           <span class="tag">02</span>
-          <h3 data-i18n="p2T">莓果 Berry</h3>
-          <p data-i18n="p2D">果香明亮，酸甜平衡。</p>
+          <h3 data-i18n="p2T">DJB Lemon +C</h3>
+          <p data-i18n="p2D">添加維他命 C 的檸檬風味氣泡飲，清爽提神。</p>
         </div>
       </article>
       <article class="product-card">
-        <div class="product-thumb"><span data-i18n="phLabel">待補</span></div>
+        <div class="product-thumb"><img src="product-soda.jpg" alt="DJB Soda Water"></div>
         <div class="product-body">
           <span class="tag">03</span>
-          <h3 data-i18n="p3T">柑橘 Citrus</h3>
-          <p data-i18n="p3D">清新柑橘調，適合日間飲用。</p>
+          <h3 data-i18n="p3T">DJB Soda Water</h3>
+          <p data-i18n="p3D">俐落黑罐設計的氣泡水，純粹暢快。</p>
         </div>
       </article>
       <article class="product-card">
-        <div class="product-thumb"><span data-i18n="phLabel">待補</span></div>
+        <div class="product-thumb contain"><img src="product-clear.jpg" alt="CLEAR pure water"></div>
         <div class="product-body">
           <span class="tag">04</span>
-          <h3 data-i18n="p4T">聯名系列</h3>
-          <p data-i18n="p4D">與品牌客戶合作的特別版本。</p>
+          <h3 data-i18n="p4T">CLEAR 純水</h3>
+          <p data-i18n="p4D">簡約設計的純淨瓶裝水，日常補水的清爽選擇。</p>
         </div>
       </article>
+    </div>
+
+    <div class="collab-wrap">
+      <div class="section-head" style="margin:52px 0 24px;">
+        <span class="eyebrow" data-i18n="collabEyebrow">合作聯名</span>
+        <h2 style="font-size:clamp(20px,2.4vw,28px);" data-i18n="collabH2">為品牌客戶打造的聯名飲品</h2>
+        <p data-i18n="collabSub">除了自有產品，我們也為企業客戶開發專屬聯名飲品。</p>
+      </div>
+      <div class="collab-grid">
+        <div class="collab-card">
+          <div class="collab-thumb"><img src="cobrand-gogoro.png" alt="Gogoro VIVA"></div>
+          <div class="collab-text">
+            <span class="tag" data-i18n="collabTag">聯名 Collaboration</span>
+            <h4>Gogoro VIVA</h4>
+            <p data-i18n="collabGogoro">Gogoro 贈送給顧客的宣傳飲品。</p>
+          </div>
+        </div>
+        <div class="collab-card">
+          <div class="collab-thumb"><img src="cobrand-tigerair.png" alt="Tigerair Lemon+C"></div>
+          <div class="collab-text">
+            <span class="tag" data-i18n="collabTag">聯名 Collaboration</span>
+            <h4>Tigerair Lemon+C</h4>
+            <p data-i18n="collabTigerair">台灣虎航機上供應的飲品。</p>
+          </div>
+        </div>
+        <div class="collab-card">
+          <div class="collab-thumb"><img src="product-avengers.jpg" alt="DJB × Marvel Avengers 聯名能量飲"></div>
+          <div class="collab-text">
+            <span class="tag" data-i18n="collabTag">聯名 Collaboration</span>
+            <h4>DJB &times; Marvel</h4>
+            <p data-i18n="collabAvengers">與 Marvel／Disney 合作、以《復仇者聯盟》為主題的授權聯名能量飲。</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -410,8 +456,8 @@ footer ul a:hover{color:#fff;}
     </div>
     <div class="feature-grid">
       <div class="feature">
-        <h4><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="feat1T">零糖配方</span></h4>
-        <p data-i18n="feat1D">不添加蔗糖，降低日常負擔，同時保留清爽口感。</p>
+        <h4><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="feat1T">簡單俐落</span></h4>
+        <p data-i18n="feat1D">配方簡單、口感清爽，是日常隨手可得的能量選擇。</p>
       </div>
       <div class="feature">
         <h4><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.6 5.6L21 9.4l-4.5 4.3 1.1 6.1L12 17l-5.6 2.8 1.1-6.1L3 9.4l6.4-.8z"/></svg><span data-i18n="feat2T">天然來源</span></h4>
@@ -422,26 +468,6 @@ footer ul a:hover{color:#fff;}
         <p data-i18n="feat3D">330ml 輕巧瓶身，通勤、辦公與運動場景皆適用。</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ================= SPECS ================= -->
-<!-- SCAFFOLD: fill the right-hand column with real specification data -->
-<section id="specs">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow" data-i18n="specsEyebrow">產品規格</span>
-      <h2 data-i18n="specsH2">規格與認證</h2>
-    </div>
-    <table class="spec-table">
-      <tbody>
-        <tr><th data-i18n="specName">品名</th><td><span data-i18n="phLabel">待補</span></td></tr>
-        <tr><th data-i18n="specSize">規格容量</th><td><span data-i18n="phLabel">待補</span></td></tr>
-        <tr><th data-i18n="specOrigin">產地</th><td><span data-i18n="phLabel">待補</span></td></tr>
-        <tr><th data-i18n="specShelf">保存期限</th><td><span data-i18n="phLabel">待補</span></td></tr>
-        <tr><th data-i18n="specCert">認證</th><td><span data-i18n="phLabel">待補</span></td></tr>
-      </tbody>
-    </table>
   </div>
 </section>
 
@@ -458,7 +484,7 @@ footer ul a:hover{color:#fff;}
       <div class="channel"><b data-i18n="ch1">連鎖零售</b><span data-i18n="ch1d">全台主要通路</span></div>
       <div class="channel"><b data-i18n="ch2">電商平台</b><span data-i18n="ch2d">線上購物通路</span></div>
       <div class="channel"><b data-i18n="ch3">餐飲通路</b><span data-i18n="ch3d">餐廳與飲品店</span></div>
-      <div class="channel"><b data-i18n="ch4">海外市場</b><span data-i18n="ch4d">亞太地區代理</span></div>
+      <a class="channel" href="https://sipla.us/" target="_blank" rel="noopener"><b data-i18n="ch4">美國</b><span data-i18n="ch4d">由 Sip L.A. 代理</span></a>
     </div>
   </div>
 </section>
@@ -566,53 +592,55 @@ footer ul a:hover{color:#fff;}
 window.PAGE_I18N = {
   "zh": {
     "pageTitle": "Daijoubu｜M&W International",
-    "pageDesc": "Daijoubu — 由 M&W International 開發與經營的自有品牌，旗下 DJB Energy 為零糖、天然來源的日常能量飲品。",
+    "pageDesc": "Daijoubu — 由 M&W International 開發與經營的自有品牌，旗下 DJB Energy 為天然來源咖啡因的日常能量飲品。",
     "heroKicker": "純淨能量 Clean Energy",
     "heroH1": "Daijoubu",
-    "heroLede": "零糖配方、天然來源咖啡因，為現代生活節奏設計的每日能量補給。",
+    "heroLede": "天然來源咖啡因、簡單俐落，為現代生活節奏設計的每日能量補給。",
     "storyH2": "為今天而生的能量飲",
     "storyP1": "Daijoubu 是 M&W 自有品牌，自 2010 年投入飲品市場以來，持續以「純淨、簡單、無負擔」作為產品核心。我們相信能量補給不該以健康為代價。",
     "storyP2": "從配方設計、包裝視覺到通路布局，Daijoubu 由 M&W 團隊一手主導，並持續為零售、餐飲與電商通路提供穩定供應。",
-    "storyBox": "零糖、天然來源咖啡因，330ml 隨手瓶身，適合工作、運動與日常提神。",
-    "feat1T": "零糖配方",
-    "feat1D": "不添加蔗糖，降低日常負擔，同時保留清爽口感。",
+    "storyBox": "天然來源咖啡因，330ml 隨手瓶身，適合工作、運動與日常提神。",
+    "feat1T": "簡單俐落",
+    "feat1D": "配方簡單、口感清爽，是日常隨手可得的能量選擇。",
     "feat2T": "天然來源",
     "feat2D": "咖啡因來自天然原料，成分透明、標示清楚。",
     "feat3T": "為今天設計",
     "feat3D": "330ml 輕巧瓶身，通勤、辦公與運動場景皆適用。",
-    "p1T": "原味 Original",
-    "p1D": "品牌核心口味，清爽俐落。",
-    "p2T": "莓果 Berry",
-    "p2D": "果香明亮，酸甜平衡。",
-    "p3T": "柑橘 Citrus",
-    "p3D": "清新柑橘調，適合日間飲用。",
-    "p4T": "聯名系列",
-    "p4D": "與品牌客戶合作的特別版本。"
+    "p1T": "DJB Energy",
+    "p1D": "品牌核心產品線，天然來源咖啡因的能量飲。",
+    "p2T": "DJB Lemon +C",
+    "p2D": "添加維他命 C 的檸檬風味氣泡飲，清爽提神。",
+    "p3T": "DJB Soda Water",
+    "p3D": "俐落黑罐設計的氣泡水，純粹暢快。",
+    "p4T": "CLEAR 純水",
+    "p4D": "簡約設計的純淨瓶裝水，日常補水的清爽選擇。",
+    "collabEyebrow": "合作聯名", "collabH2": "為品牌客戶打造的聯名飲品", "collabSub": "除了自有產品，我們也為企業客戶開發專屬聯名飲品。", "collabTag": "聯名 Collaboration", "collabGogoro": "Gogoro 贈送給顧客的宣傳飲品。", "collabTigerair": "台灣虎航機上供應的飲品。", "collabAvengers": "與 Marvel／Disney 合作、以《復仇者聯盟》為主題的授權聯名能量飲。"
   },
   "en": {
     "pageTitle": "Daijoubu | M&W International",
-    "pageDesc": "Daijoubu — an M&W International house brand, whose DJB Energy line delivers zero-sugar, naturally sourced everyday energy.",
+    "pageDesc": "Daijoubu — an M&W International house brand, whose DJB Energy line delivers naturally sourced everyday energy.",
     "heroKicker": "Clean Energy",
     "heroH1": "Daijoubu",
-    "heroLede": "Zero sugar, naturally sourced caffeine — everyday energy built for the pace of modern life.",
+    "heroLede": "Naturally sourced caffeine, clean and simple — everyday energy built for the pace of modern life.",
     "storyH2": "Made For Today",
     "storyP1": "Daijoubu is M&W's own brand. Since entering the beverage market in 2010, we have kept the same three principles at the centre of the product: clean, simple, and light on the body.",
     "storyP2": "From formulation and packaging design through to channel rollout, Daijoubu is led end-to-end by the M&W team, with steady supply into retail, foodservice and e-commerce.",
-    "storyBox": "Zero sugar, naturally sourced caffeine, in a 330ml can — made for work, training and everything in between.",
-    "feat1T": "Zero Sugar",
-    "feat1D": "No added cane sugar, keeping the finish clean without the sugar load.",
+    "storyBox": "Naturally sourced caffeine in a 330ml can — made for work, training and everything in between.",
+    "feat1T": "Clean & Simple",
+    "feat1D": "A simple formulation with a clean, refreshing finish — energy within easy reach.",
     "feat2T": "Naturally Sourced",
     "feat2D": "Caffeine derived from natural ingredients, with transparent labelling.",
     "feat3T": "Built For The Day",
     "feat3D": "A light 330ml can that fits the commute, the desk and the gym bag.",
-    "p1T": "Original",
-    "p1D": "The core flavour — crisp and clean.",
-    "p2T": "Berry",
-    "p2D": "Bright fruit character, balanced sweetness.",
-    "p3T": "Citrus",
-    "p3D": "Fresh citrus profile, easy daytime drinking.",
-    "p4T": "Co-branded Editions",
-    "p4D": "Special runs produced with partner brands."
+    "p1T": "DJB Energy",
+    "p1D": "The brand's core line — an energy drink with naturally sourced caffeine.",
+    "p2T": "DJB Lemon +C",
+    "p2D": "A lemon sparkling drink with added vitamin C — light and refreshing.",
+    "p3T": "DJB Soda Water",
+    "p3D": "Sparkling water in a clean black can — simple and crisp.",
+    "p4T": "CLEAR Pure Water",
+    "p4D": "Minimally designed bottled water — an easy everyday choice for staying hydrated.",
+    "collabEyebrow": "Collaborations", "collabH2": "Co-branded drinks made for our clients", "collabSub": "Alongside our own products, we develop bespoke co-branded drinks for corporate clients.", "collabTag": "Collaboration", "collabGogoro": "A promotional drink Gogoro gives to its customers.", "collabTigerair": "Served on board Tigerair Taiwan flights.", "collabAvengers": "A licensed Avengers-themed energy drink produced with Marvel / Disney."
   }
 };
 </script>
@@ -640,13 +668,10 @@ window.PAGE_I18N = {
       lineupEyebrow: "產品系列", lineupH2: "產品陣容",
       lineupSub: "以下為產品版位範例，實際品項與圖片待補。",
       featuresEyebrow: "產品特色", featuresH2: "為什麼選擇這個品牌",
-      specsEyebrow: "產品規格", specsH2: "規格與認證",
-      specName: "品名", specSize: "規格容量", specOrigin: "產地",
-      specShelf: "保存期限", specCert: "認證",
       channelEyebrow: "銷售通路", channelH2: "哪裡買得到",
       channelSub: "通路資訊待補，以下為版位示意。",
       ch1: "連鎖零售", ch1d: "全台主要通路", ch2: "電商平台", ch2d: "線上購物通路",
-      ch3: "餐飲通路", ch3d: "餐廳與飲品店", ch4: "海外市場", ch4d: "亞太地區代理",
+      ch3: "餐飲通路", ch3d: "餐廳與飲品店", ch4: "美國", ch4d: "由 Sip L.A. 代理",
       ctaEyebrow: "合作洽談", ctaH2: "想代理或引進這個品牌？",
       ctaP: "無論您是零售通路、餐飲業者或海外代理夥伴，我們都樂於一同討論合作方式。",
       ctaBtn1: "聯絡我們", ctaBtn2: "回到品牌總覽",
@@ -672,13 +697,10 @@ window.PAGE_I18N = {
       lineupEyebrow: "Product Range", lineupH2: "The Lineup",
       lineupSub: "Placeholder slots below — final products and photography to be added.",
       featuresEyebrow: "Why It Works", featuresH2: "What Sets This Brand Apart",
-      specsEyebrow: "Specifications", specsH2: "Specs & Certifications",
-      specName: "Product name", specSize: "Size / volume", specOrigin: "Country of origin",
-      specShelf: "Shelf life", specCert: "Certifications",
       channelEyebrow: "Availability", channelH2: "Where To Buy",
       channelSub: "Channel details to be confirmed — layout shown for reference.",
       ch1: "Retail Chains", ch1d: "Major retailers nationwide", ch2: "E-commerce", ch2d: "Online marketplaces",
-      ch3: "Foodservice", ch3d: "Restaurants & beverage bars", ch4: "Export Markets", ch4d: "Asia-Pacific distribution",
+      ch3: "Foodservice", ch3d: "Restaurants & beverage bars", ch4: "United States", ch4d: "Distributed by Sip L.A.",
       ctaEyebrow: "Partnership", ctaH2: "Interested in carrying this brand?",
       ctaP: "Whether you are a retailer, a foodservice operator or an overseas distributor, we'd be glad to talk it through.",
       ctaBtn1: "Contact Us", ctaBtn2: "Back to All Brands",
