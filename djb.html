@@ -183,6 +183,8 @@ nav.primary a.current::after{width:100%;background:var(--accent);}
 .collab-text p{font-size:13px;color:var(--ink-soft);}
 @media (max-width:900px){.collab-grid{grid-template-columns:1fr 1fr;}}
 @media (max-width:640px){.collab-grid{grid-template-columns:1fr;}}
+.channels-section{background:var(--paper);border-top:1px solid var(--line);}
+.channel-row{margin-top:8px;}
 .product-body{padding:22px 20px 26px;flex:1;display:flex;flex-direction:column;}
 .product-body .tag{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:8px;}
 .product-body h3{font-size:17px;font-weight:600;color:var(--navy-deep);margin-bottom:10px;}
@@ -374,7 +376,6 @@ footer ul a:hover{color:#fff;}
     <div class="section-head">
       <span class="eyebrow" data-i18n="lineupEyebrow">產品系列</span>
       <h2 data-i18n="lineupH2">產品陣容</h2>
-      <p data-i18n="lineupSub">Daijoubu 旗下橫跨能量、機能與純淨飲品，滿足不同場景的日常需求。</p>
     </div>
     <div class="lineup-grid">
       <article class="product-card">
@@ -473,13 +474,12 @@ footer ul a:hover{color:#fff;}
 
 <!-- ================= CHANNELS ================= -->
 <!-- SCAFFOLD: replace with the actual retail / e-commerce partners -->
-<section class="features" id="channels">
+<section id="channels" class="channels-section">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow" data-i18n="channelEyebrow">銷售通路</span>
       <h2 data-i18n="channelH2">哪裡買得到</h2>
-      <p data-i18n="channelSub">通路資訊待補，以下為版位示意。</p>
-    </div>
+          </div>
     <div class="channel-row">
       <div class="channel"><b data-i18n="ch1">連鎖零售</b><span data-i18n="ch1d">全台主要通路</span></div>
       <div class="channel"><b data-i18n="ch2">電商平台</b><span data-i18n="ch2d">線上購物通路</span></div>
@@ -666,10 +666,8 @@ window.PAGE_I18N = {
       crumbHome: "首頁", crumbBrands: "品牌產品",
       storyEyebrow: "品牌故事",
       lineupEyebrow: "產品系列", lineupH2: "產品陣容",
-      lineupSub: "以下為產品版位範例，實際品項與圖片待補。",
       featuresEyebrow: "產品特色", featuresH2: "為什麼選擇這個品牌",
       channelEyebrow: "銷售通路", channelH2: "哪裡買得到",
-      channelSub: "通路資訊待補，以下為版位示意。",
       ch1: "連鎖零售", ch1d: "全台主要通路", ch2: "電商平台", ch2d: "線上購物通路",
       ch3: "餐飲通路", ch3d: "餐廳與飲品店", ch4: "美國", ch4d: "由 Sip L.A. 代理",
       ctaEyebrow: "合作洽談", ctaH2: "想代理或引進這個品牌？",
@@ -695,10 +693,8 @@ window.PAGE_I18N = {
       crumbHome: "Home", crumbBrands: "Our Brands",
       storyEyebrow: "Brand Story",
       lineupEyebrow: "Product Range", lineupH2: "The Lineup",
-      lineupSub: "Placeholder slots below — final products and photography to be added.",
       featuresEyebrow: "Why It Works", featuresH2: "What Sets This Brand Apart",
       channelEyebrow: "Availability", channelH2: "Where To Buy",
-      channelSub: "Channel details to be confirmed — layout shown for reference.",
       ch1: "Retail Chains", ch1d: "Major retailers nationwide", ch2: "E-commerce", ch2d: "Online marketplaces",
       ch3: "Foodservice", ch3d: "Restaurants & beverage bars", ch4: "United States", ch4d: "Distributed by Sip L.A.",
       ctaEyebrow: "Partnership", ctaH2: "Interested in carrying this brand?",
