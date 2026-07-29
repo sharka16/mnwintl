@@ -189,6 +189,9 @@ nav.primary a.current::after{width:100%;background:var(--accent);}
 
 /* ---------- channels ---------- */
 .channel-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+a.channel{text-decoration:none;transition:border-color .25s ease, transform .25s ease;}
+a.channel:hover{border-color:var(--accent);transform:translateY(-3px);}
+a.channel b{color:var(--navy-deep);}
 .channel{
   border:1px solid var(--line);background:#fff;border-radius:4px;
   padding:22px 18px;text-align:center;font-size:14px;color:var(--ink-soft);
@@ -328,7 +331,7 @@ footer ul a:hover{color:#fff;}
       <h1 data-i18n-html="heroH1">KUNDAL</h1>
       <p class="lede" data-i18n="heroLede">以科學配方與香氛體驗，重新定義每日的頭皮與身體保養。</p>
       <div class="hero-actions">
-        <a class="btn btn-accent" href="#lineup"><span data-i18n="lineupH2">產品陣容</span> <span class="arrow">→</span></a>
+        <a class="btn btn-accent" href="#what-we-do"><span data-i18n="wwdH2">M&amp;W 為 KUNDAL 做的事</span> <span class="arrow">→</span></a>
         <a class="btn btn-outline" href="index.html#contact"><span data-i18n="navCta">合作夥伴洽談</span> <span class="arrow">→</span></a>
       </div>
     </div>
@@ -355,110 +358,71 @@ footer ul a:hover{color:#fff;}
   </div>
 </section>
 
-<!-- ================= PRODUCT LINEUP ================= -->
-<!-- SCAFFOLD: replace the four product cards with real products + photography -->
-<section id="lineup">
+<!-- ================= WHAT WE DO ================= -->
+<section id="what-we-do">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow" data-i18n="lineupEyebrow">產品系列</span>
-      <h2 data-i18n="lineupH2">產品陣容</h2>
-      <p data-i18n="lineupSub">以下為產品版位範例，實際品項與圖片待補。</p>
-    </div>
-    <div class="lineup-grid">
-      <article class="product-card">
-        <div class="product-thumb"><span data-i18n="phLabel">待補</span></div>
-        <div class="product-body">
-          <span class="tag">01</span>
-          <h3 data-i18n="p1T">洗髮精 Shampoo</h3>
-          <p data-i18n="p1D">多款香調與功能可選。</p>
-        </div>
-      </article>
-      <article class="product-card">
-        <div class="product-thumb"><span data-i18n="phLabel">待補</span></div>
-        <div class="product-body">
-          <span class="tag">02</span>
-          <h3 data-i18n="p2T">護髮素 Conditioner</h3>
-          <p data-i18n="p2D">洗後護理，維持柔順。</p>
-        </div>
-      </article>
-      <article class="product-card">
-        <div class="product-thumb"><span data-i18n="phLabel">待補</span></div>
-        <div class="product-body">
-          <span class="tag">03</span>
-          <h3 data-i18n="p3T">沐浴乳 Body Wash</h3>
-          <p data-i18n="p3D">溫和清潔，香氣延續。</p>
-        </div>
-      </article>
-      <article class="product-card">
-        <div class="product-thumb"><span data-i18n="phLabel">待補</span></div>
-        <div class="product-body">
-          <span class="tag">04</span>
-          <h3 data-i18n="p4T">身體乳 Body Lotion</h3>
-          <p data-i18n="p4D">沐浴後保濕收尾。</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FEATURES ================= -->
-<section class="features" id="features">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow" data-i18n="featuresEyebrow">產品特色</span>
-      <h2 data-i18n="featuresH2">為什麼選擇這個品牌</h2>
+      <span class="eyebrow" data-i18n="wwdEyebrow">我們的角色</span>
+      <h2 data-i18n="wwdH2">M&amp;W 為 KUNDAL 做的事</h2>
+      <p data-i18n="wwdSub">KUNDAL 產品線廣、香氛選擇多，我們的工作是讓這個韓國品牌能穩定、正確地在台灣市場落地。</p>
     </div>
     <div class="feature-grid">
       <div class="feature">
-        <h4><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="feat1T">蛋白質導入技術</span></h4>
-        <p data-i18n="feat1D">針對受損髮質設計，兼顧修護與蓬鬆感。</p>
+        <h4><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7l9-4 9 4-9 4-9-4zM3 7v10l9 4 9-4V7"/></svg><span data-i18n="wwd1T">進口與供應</span></h4>
+        <p data-i18n="wwd1D">負責 KUNDAL 產品自韓國進口、庫存管理與通路配送，確保供貨穩定。</p>
       </div>
       <div class="feature">
-        <h4><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.6 5.6L21 9.4l-4.5 4.3 1.1 6.1L12 17l-5.6 2.8 1.1-6.1L3 9.4l6.4-.8z"/></svg><span data-i18n="feat2T">香氛體驗</span></h4>
-        <p data-i18n="feat2D">多款香調可選，讓每日清潔成為放鬆時刻。</p>
+        <h4><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg><span data-i18n="wwd2T">法規與合規</span></h4>
+        <p data-i18n="wwd2D">處理進口報驗、成分與標示的在地法規查核，讓每項產品都符合台灣規範。</p>
       </div>
       <div class="feature">
-        <h4><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-i18n="feat3T">大容量設計</span></h4>
-        <p data-i18n="feat3D">500ml 瓶身，適合家庭共用與長期使用。</p>
+        <h4><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg><span data-i18n="wwd3T">通路開發</span></h4>
+        <p data-i18n="wwd3D">拓展連鎖零售、美妝通路與電商據點，為品牌建立在地銷售網絡。</p>
+      </div>
+      <div class="feature">
+        <h4><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg><span data-i18n="wwd4T">行銷與品牌溝通</span></h4>
+        <p data-i18n="wwd4D">規劃在地行銷與品牌溝通，將 KUNDAL 的香氛與產品特色傳達給台灣消費者。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= SPECS ================= -->
-<!-- SCAFFOLD: fill the right-hand column with real specification data -->
-<section id="specs">
+<!-- ================= ABOUT THE BRAND + LINK OUT ================= -->
+<section class="features" id="about-brand">
   <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow" data-i18n="specsEyebrow">產品規格</span>
-      <h2 data-i18n="specsH2">規格與認證</h2>
+    <div class="story-grid">
+      <div>
+        <span class="eyebrow" data-i18n="brandEyebrow">關於 KUNDAL</span>
+        <h2 data-i18n="brandH2">香氛，是 KUNDAL 的語言</h2>
+        <p data-i18n="brandP1">KUNDAL 為韓國知名的頭皮與身體保養品牌，以自家研發的香氛與天然來源成分著稱，產品橫跨洗髮、護髮、沐浴與身體保養。</p>
+        <p data-i18n="brandP2">品牌旗下擁有數百項 SKU 與多達數十種香調選擇，完整系列與最新產品，建議直接前往 KUNDAL 官方網站瀏覽。</p>
+        <a class="btn btn-accent" href="https://www.kundal.co.kr/" target="_blank" rel="noopener" style="margin-top:8px;">
+          <span data-i18n="brandBtn">前往 KUNDAL 官方網站</span> <span class="arrow">↗</span>
+        </a>
+      </div>
+      <aside class="story-box">
+        <div class="icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.6 5.6L21 9.4l-4.5 4.3 1.1 6.1L12 17l-5.6 2.8 1.1-6.1L3 9.4l6.4-.8z"/></svg>
+        </div>
+        <p data-i18n="brandBox">數百項產品、數十種香調——完整品項請以 KUNDAL 官方網站為準。</p>
+      </aside>
     </div>
-    <table class="spec-table">
-      <tbody>
-        <tr><th data-i18n="specName">品名</th><td><span data-i18n="phLabel">待補</span></td></tr>
-        <tr><th data-i18n="specSize">規格容量</th><td><span data-i18n="phLabel">待補</span></td></tr>
-        <tr><th data-i18n="specOrigin">產地</th><td><span data-i18n="phLabel">待補</span></td></tr>
-        <tr><th data-i18n="specShelf">保存期限</th><td><span data-i18n="phLabel">待補</span></td></tr>
-        <tr><th data-i18n="specCert">認證</th><td><span data-i18n="phLabel">待補</span></td></tr>
-      </tbody>
-    </table>
   </div>
 </section>
 
-<!-- ================= CHANNELS ================= -->
-<!-- SCAFFOLD: replace with the actual retail / e-commerce partners -->
-<section class="features" id="channels">
+<!-- ================= WHERE TO BUY ================= -->
+<section id="stockists">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow" data-i18n="channelEyebrow">銷售通路</span>
-      <h2 data-i18n="channelH2">哪裡買得到</h2>
-      <p data-i18n="channelSub">通路資訊待補，以下為版位示意。</p>
+      <span class="eyebrow" data-i18n="stkEyebrow">哪裡買得到</span>
+      <h2 data-i18n="stkH2">KUNDAL 在台灣的銷售據點</h2>
+      <p data-i18n="stkSub">我們將 KUNDAL 產品鋪貨至台灣主要零售通路，並於 Shopee 經營品牌官方旗艦店。</p>
     </div>
     <div class="channel-row">
-      <div class="channel"><b data-i18n="ch1">連鎖零售</b><span data-i18n="ch1d">全台主要通路</span></div>
-      <div class="channel"><b data-i18n="ch2">電商平台</b><span data-i18n="ch2d">線上購物通路</span></div>
-      <div class="channel"><b data-i18n="ch3">餐飲通路</b><span data-i18n="ch3d">餐廳與飲品店</span></div>
-      <div class="channel"><b data-i18n="ch4">海外市場</b><span data-i18n="ch4d">亞太地區代理</span></div>
+      <div class="channel"><b data-i18n="stk1">Costco 好市多</b><span data-i18n="stk1d">量販賣場通路</span></div>
+      <div class="channel"><b data-i18n="stk2">康是美 Cosmed</b><span data-i18n="stk2d">美妝與藥妝通路</span></div>
+      <div class="channel"><b data-i18n="stk3">萬家福</b><span data-i18n="stk3d">量販賣場通路</span></div>
+      <a class="channel" href="https://shopee.tw/" target="_blank" rel="noopener"><b data-i18n="stk4">Shopee 官方旗艦店</b><span data-i18n="stk4d">由 M&amp;W 經營</span></a>
     </div>
   </div>
 </section>
@@ -471,7 +435,6 @@ footer ul a:hover{color:#fff;}
     <p data-i18n="ctaP">無論您是零售通路、餐飲業者或海外代理夥伴，我們都樂於一同討論合作方式。</p>
     <div class="cta-actions">
       <a class="btn btn-ghost-white" href="index.html#contact"><span data-i18n="ctaBtn1">聯絡我們</span> <span class="arrow">→</span></a>
-      <a class="btn btn-ghost-white" href="index.html#brands"><span data-i18n="ctaBtn2">回到品牌總覽</span> <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -574,20 +537,26 @@ window.PAGE_I18N = {
     "storyP1": "KUNDAL 來自韓國，以蛋白質導入技術與海洋複合成分為核心，打造兼顧功能與感受的頭皮及身體保養系列。",
     "storyP2": "M&W 負責 KUNDAL 在台灣的市場導入、法規諮詢、通路拓展與行銷操作，協助品牌在地化並穩定成長。",
     "storyBox": "多元香氛選擇、大容量瓶身設計，是家庭與個人日常保養的實用之選。",
-    "feat1T": "蛋白質導入技術",
-    "feat1D": "針對受損髮質設計，兼顧修護與蓬鬆感。",
-    "feat2T": "香氛體驗",
-    "feat2D": "多款香調可選，讓每日清潔成為放鬆時刻。",
-    "feat3T": "大容量設計",
-    "feat3D": "500ml 瓶身，適合家庭共用與長期使用。",
-    "p1T": "洗髮精 Shampoo",
-    "p1D": "多款香調與功能可選。",
-    "p2T": "護髮素 Conditioner",
-    "p2D": "洗後護理，維持柔順。",
-    "p3T": "沐浴乳 Body Wash",
-    "p3D": "溫和清潔，香氣延續。",
-    "p4T": "身體乳 Body Lotion",
-    "p4D": "沐浴後保濕收尾。"
+    "wwdEyebrow": "我們的角色",
+    "wwdH2": "M&W 為 KUNDAL 做的事",
+    "wwdSub": "KUNDAL 產品線廣、香氛選擇多，我們的工作是讓這個韓國品牌能穩定、正確地在台灣市場落地。",
+    "wwd1T": "進口與供應", "wwd1D": "負責 KUNDAL 產品自韓國進口、庫存管理與通路配送，確保供貨穩定。",
+    "wwd2T": "法規與合規", "wwd2D": "處理進口報驗、成分與標示的在地法規查核，讓每項產品都符合台灣規範。",
+    "wwd3T": "通路開發", "wwd3D": "拓展連鎖零售、美妝通路與電商據點，為品牌建立在地銷售網絡。",
+    "wwd4T": "行銷與品牌溝通", "wwd4D": "規劃在地行銷與品牌溝通，將 KUNDAL 的香氛與產品特色傳達給台灣消費者。",
+    "brandEyebrow": "關於 KUNDAL",
+    "brandH2": "香氛，是 KUNDAL 的語言",
+    "brandP1": "KUNDAL 為韓國知名的頭皮與身體保養品牌，以自家研發的香氛與天然來源成分著稱，產品橫跨洗髮、護髮、沐浴與身體保養。",
+    "brandP2": "品牌旗下擁有數百項 SKU 與多達數十種香調選擇，完整系列與最新產品，建議直接前往 KUNDAL 官方網站瀏覽。",
+    "brandBtn": "前往 KUNDAL 官方網站",
+    "brandBox": "數百項產品、數十種香調——完整品項請以 KUNDAL 官方網站為準。",
+    "stkEyebrow": "哪裡買得到",
+    "stkH2": "KUNDAL 在台灣的銷售據點",
+    "stkSub": "我們將 KUNDAL 產品鋪貨至台灣主要零售通路，並於 Shopee 經營品牌官方旗艦店。",
+    "stk1": "Costco 好市多", "stk1d": "量販賣場通路",
+    "stk2": "康是美 Cosmed", "stk2d": "美妝與藥妝通路",
+    "stk3": "萬家福", "stk3d": "量販賣場通路",
+    "stk4": "Shopee 官方旗艦店", "stk4d": "由 M&W 經營"
   },
   "en": {
     "pageTitle": "KUNDAL | M&W International",
@@ -599,20 +568,26 @@ window.PAGE_I18N = {
     "storyP1": "KUNDAL comes out of Korea, built around protein-pumping technology and a blue marine complex to deliver scalp and body care that performs and feels good.",
     "storyP2": "M&W handles KUNDAL's market entry in Taiwan — regulatory guidance, channel development and marketing execution — helping the brand localise and grow steadily.",
     "storyBox": "A broad fragrance range in generous 500ml bottles: practical for households and for anyone who uses it daily.",
-    "feat1T": "Protein Pumping Technology",
-    "feat1D": "Designed for damaged hair, balancing repair with lightness and volume.",
-    "feat2T": "Fragrance Experience",
-    "feat2D": "A range of scent profiles that turn a daily wash into a moment of calm.",
-    "feat3T": "Generous Format",
-    "feat3D": "500ml bottles suited to shared households and long-term use.",
-    "p1T": "Shampoo",
-    "p1D": "Multiple scents and functional variants.",
-    "p2T": "Conditioner",
-    "p2D": "Post-wash care for smoothness and shine.",
-    "p3T": "Body Wash",
-    "p3D": "Gentle cleansing with lasting fragrance.",
-    "p4T": "Body Lotion",
-    "p4D": "Moisture to finish the routine."
+    "wwdEyebrow": "Our Role",
+    "wwdH2": "What M&W Does For KUNDAL",
+    "wwdSub": "KUNDAL has a wide range and a lot of fragrances. Our job is to get this Korean brand into the Taiwanese market reliably and correctly.",
+    "wwd1T": "Import & Supply", "wwd1D": "Handling import from Korea, inventory management and distribution, keeping supply steady across channels.",
+    "wwd2T": "Regulatory & Compliance", "wwd2D": "Managing import inspection and local checks on ingredients and labelling, so every product meets Taiwan's regulations.",
+    "wwd3T": "Channel Development", "wwd3D": "Building out retail chains, beauty channels and e-commerce, giving the brand a local sales network.",
+    "wwd4T": "Marketing & Brand Communication", "wwd4D": "Planning local marketing and communication that carries KUNDAL's fragrances and product story to Taiwanese consumers.",
+    "brandEyebrow": "About KUNDAL",
+    "brandH2": "Fragrance Is KUNDAL's Language",
+    "brandP1": "KUNDAL is a well-known Korean scalp and body care brand, recognised for its in-house fragrances and naturally derived ingredients, spanning shampoo, hair care, body wash and body care.",
+    "brandP2": "The brand carries hundreds of SKUs and dozens of fragrance options. For the full range and the latest products, we'd point you to KUNDAL's official website.",
+    "brandBtn": "Visit the KUNDAL Official Site",
+    "brandBox": "Hundreds of products, dozens of fragrances — the official KUNDAL site is the definitive source for the full range.",
+    "stkEyebrow": "Where To Buy",
+    "stkH2": "Where To Find KUNDAL In Taiwan",
+    "stkSub": "We place KUNDAL products across Taiwan's major retail channels, and operate the brand's official flagship store on Shopee.",
+    "stk1": "Costco", "stk1d": "Warehouse retail",
+    "stk2": "Cosmed", "stk2d": "Health & beauty retail",
+    "stk3": "Wang Jia Fu", "stk3d": "Warehouse retail",
+    "stk4": "Shopee Official Store", "stk4d": "Operated by M&W"
   }
 };
 </script>
