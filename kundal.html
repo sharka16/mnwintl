@@ -123,8 +123,9 @@ nav.primary a.current::after{width:100%;background:var(--accent);}
 .crumb .sep{opacity:.5;}
 
 /* ---------- brand hero ---------- */
-.brand-hero{position:relative;overflow:hidden;height:520px;padding:0;}
+.brand-hero{position:relative;overflow:hidden;height:clamp(520px,40vw,720px);padding:0;}
 .brand-hero-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:78% center;background-repeat:no-repeat;}
+.brand-hero .brand-hero-bg{background-position:center 58%;}
 .brand-hero-scrim{position:absolute;inset:0;z-index:1;}
 .brand-hero.on-light .brand-hero-scrim{
   background:linear-gradient(90deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.8) 38%,rgba(255,255,255,.25) 64%,rgba(255,255,255,0) 84%);
@@ -250,7 +251,7 @@ footer ul a:hover{color:#fff;}
   section{padding:64px 0;}
   .wrap{padding:0 20px;}
   .brand-hero{height:auto;padding:56px 0 300px;}
-  .brand-hero-bg{background-position:80% bottom;}
+  .brand-hero-bg{background-position:center bottom;}
   .brand-hero.on-light .brand-hero-scrim{background:linear-gradient(180deg,rgba(255,255,255,.95) 0%,rgba(255,255,255,.85) 40%,rgba(255,255,255,0) 75%);}
   .brand-hero.on-dark .brand-hero-scrim{background:linear-gradient(180deg,rgba(8,10,16,.92) 0%,rgba(8,10,16,.7) 40%,rgba(8,10,16,0) 75%);}
   .lineup-grid{grid-template-columns:1fr;}
@@ -273,7 +274,7 @@ footer ul a:hover{color:#fff;}
 <header>
   <div class="wrap nav-inner">
     <a class="logo" href="index.html">
-      <img class="logo-img" src="mw-logo-cn.png" alt="M&amp;W International 巨林生化科技有限公司">
+      <img class="logo-img" src="mw-logo-cn.png" alt="M&amp;W International 巨林生化科技有限公司" width="641" height="195">
     </a>
     <nav class="primary" aria-label="Main navigation">
       <ul>
@@ -281,7 +282,7 @@ footer ul a:hover{color:#fff;}
         <li><a href="index.html#business" data-i18n="navBusiness">我們的事業</a></li>
         <li><a class="current" href="index.html#brands" data-i18n="navBrands">品牌產品</a></li>
         <li><a href="index.html#capabilities" data-i18n="navCapabilities">核心能力</a></li>
-        <li><a href="index.html#market" data-i18n="navMarket">市場布局</a></li>
+        <li><a href="index.html#market" data-i18n="navMarket">市場佈局</a></li>
         <li><a href="index.html#contact" data-i18n="navContact">聯絡我們</a></li>
       </ul>
     </nav>
@@ -302,7 +303,7 @@ footer ul a:hover{color:#fff;}
       <li><a href="index.html#business" data-i18n="navBusiness">我們的事業</a></li>
       <li><a href="index.html#brands" data-i18n="navBrands">品牌產品</a></li>
       <li><a href="index.html#capabilities" data-i18n="navCapabilities">核心能力</a></li>
-      <li><a href="index.html#market" data-i18n="navMarket">市場布局</a></li>
+      <li><a href="index.html#market" data-i18n="navMarket">市場佈局</a></li>
       <li><a href="index.html#contact" data-i18n="navContact">聯絡我們</a></li>
     </ul>
   </nav>
@@ -479,7 +480,7 @@ footer ul a:hover{color:#fff;}
     <div class="footer-grid">
       <div>
         <div class="logo logo-on-dark" style="margin-bottom:16px;">
-          <img class="logo-img" src="mw-logo-en-white.png" alt="M&amp;W International">
+          <img class="logo-img" src="mw-logo-en-white.png" alt="M&amp;W International" width="633" height="194">
         </div>
         <p style="font-size:13px;max-width:230px;color:rgba(255,255,255,.55);" data-i18n="footerTagline">國際消費品開發、代理與市場拓展夥伴。</p>
       </div>
@@ -608,7 +609,7 @@ window.PAGE_I18N = {
     zh: {
       skip: "跳至主要內容",
       navAbout: "關於我們", navBusiness: "我們的事業", navBrands: "品牌產品",
-      navCapabilities: "核心能力", navMarket: "市場布局", navContact: "聯絡我們",
+      navCapabilities: "核心能力", navMarket: "市場佈局", navContact: "聯絡我們",
       navCta: "合作夥伴洽談",
       crumbHome: "首頁", crumbBrands: "品牌產品",
       storyEyebrow: "品牌故事",
