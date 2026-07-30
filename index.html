@@ -122,15 +122,13 @@
 
   /* About */
   .about{background:var(--paper-alt);}
-  .about-photo-wide{aspect-ratio:3.4/1;border-radius:4px;overflow:hidden;margin-bottom:40px;}
-  .about-photo-wide img{width:100%;height:100%;object-fit:cover;display:block;}
-  .about-content-grid{display:grid;grid-template-columns:1.4fr .8fr;gap:44px;align-items:start;}
+  .about-content-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:stretch;}
+  .about-photo-side{border-radius:4px;overflow:hidden;min-height:280px;}
+  .about-photo-side img{width:100%;height:100%;object-fit:cover;display:block;}
   .about h2{font-size:clamp(24px,3vw,36px);font-weight:600;color:var(--navy-deep);margin-bottom:20px;}
   .about p{color:var(--ink-soft);margin-bottom:16px;font-size:15.5px;}
   .about .more{display:inline-flex;align-items:center;gap:8px;color:var(--navy);font-weight:600;margin-top:6px;}
-  .about-box{background:#fff;border:1px solid var(--line);padding:32px 28px;border-radius:4px;}
-  .about-box .icon{width:44px;height:44px;border:1px solid var(--gold-soft);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--gold);}
-  .about-box p{font-size:15px;color:var(--ink-soft);}
+  .about-pull{border-left:3px solid var(--gold);padding-left:18px;margin:24px 0;font-size:15.5px;font-style:italic;color:var(--navy-deep);}
 
   /* Business cards */
   .section-head{max-width:640px;margin-bottom:56px;}
@@ -290,7 +288,6 @@
 
   @media (max-width:960px){
     .about-content-grid{grid-template-columns:1fr;}
-    .about-photo-wide{aspect-ratio:16/9;}
     .biz-grid{grid-template-columns:repeat(2,1fr);}
     .brand-grid{grid-template-columns:1fr;}
     .brand-card{aspect-ratio:16/11;background-position:88% center;}
@@ -404,22 +401,17 @@
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="wrap">
-    <div class="about-photo-wide" role="img" data-i18n-aria="aboutPhotoAlt" aria-label="M&W 旗下與代理品牌的產品實拍">
-      <img src="about-products.jpg" alt="" width="1855" height="848">
-    </div>
     <div class="about-content-grid">
+      <div class="about-photo-side" role="img" data-i18n-aria="aboutPhotoAlt" aria-label="M&amp;W 旗下與代理品牌的產品實拍">
+        <img src="about-products-side.jpg" alt="" width="1076" height="848">
+      </div>
       <div>
         <span class="eyebrow" data-i18n="aboutEyebrow">關於 M&amp;W</span>
         <h2 data-i18n="aboutH2">全球思維，在地實踐</h2>
         <p data-i18n="aboutP1">M&amp;W 集團擁有國際品牌資源、市場洞察與執行力，我們與品牌擁有者、製造商、零售商、通路商及餐飲夥伴合作，共同開發產品、導入市場，並建立長久與消費者的互動連結。</p>
         <p data-i18n="aboutP2">無論品牌策略到實際執行，我們都能提供專業團隊與營運後勤支援，協助品牌實現穩定的成長與價值累積。</p>
+        <p class="about-pull" data-i18n="aboutBox">我們不只是把產品帶進市場，更在打造能在市場中被接受的，策略、品牌、夥伴關係與體驗。</p>
         <a class="more" href="#business"><span data-i18n="aboutLink">深入了解 M&amp;W</span> <span class="arrow">→</span></a>
-      </div>
-      <div class="about-box">
-        <div class="icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 4 6 4 9s-1.4 6.4-4 9c-2.6-2.6-4-6-4-9s1.4-6.4 4-9z"/></svg>
-        </div>
-        <p data-i18n="aboutBox">我們不只是把產品帶進市場，更在打造能在市場中被接受的，策略、品牌、夥伴關係與體驗。</p>
       </div>
     </div>
   </div>
