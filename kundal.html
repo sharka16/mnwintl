@@ -801,6 +801,19 @@ window.PAGE_I18N = {
   });
 })();
 
+
+  // ---------- iOS Safari back-forward-cache layout fix ----------
+  // When a page is restored from bfcache (e.g. tapping the back button after
+  // visiting another page), Safari sometimes fails to re-layout grid/flex
+  // rows that contain images, even with width/height set on every <img>.
+  // Forcing a reflow on restore reliably fixes it.
+  window.addEventListener('pageshow', function (e) {
+    if (e.persisted) {
+      document.body.style.display = 'none';
+      void document.body.offsetHeight; // force reflow
+      document.body.style.display = '';
+    }
+  });
 </script>
 </body>
 </html>
