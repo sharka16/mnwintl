@@ -174,7 +174,7 @@ nav.primary a.current::after{width:100%;background:var(--accent);}
 .product-thumb.contain img{object-fit:contain;}
 /* collaborations */
 .collab-wrap{margin-top:16px;}
-.collab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.collab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
 .collab-card{display:flex;gap:18px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:6px;padding:18px 20px;}
 .collab-thumb{flex:none;width:84px;height:104px;background:#fff;border:1px solid var(--line);border-radius:4px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
 .collab-thumb img{width:100%;height:100%;object-fit:contain;}
@@ -443,6 +443,14 @@ footer ul a:hover{color:#fff;}
             <p data-i18n="collabGogoro">Gogoro 贈送給顧客的宣傳飲品。</p>
           </div>
         </div>
+        <div class="collab-card">
+          <div class="collab-thumb"><img src="product-silksclub.jpg" alt="DJB × Silks Club 客製化瓶裝水" width="900" height="900"></div>
+          <div class="collab-text">
+            <span class="tag" data-i18n="collabTag">聯名 Collaboration</span>
+            <h4>DJB &times; Silks Club</h4>
+            <p data-i18n="collabSilksClub">與 Silks Club 酒店合作推出的客製化瓶裝水。</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -485,6 +493,36 @@ footer ul a:hover{color:#fff;}
       <div class="channel"><b data-i18n="ch2">電商平台</b><span data-i18n="ch2d">線上購物通路</span></div>
       <div class="channel"><b data-i18n="ch3">餐飲通路</b><span data-i18n="ch3d">餐廳與飲品店</span></div>
       <a class="channel" href="https://sipla.us/" target="_blank" rel="noopener"><b data-i18n="ch4">美國</b><span data-i18n="ch4d">由 Sip L.A. 代理</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOLLOW / SOCIAL ================= -->
+<section class="features" id="follow">
+  <div class="wrap">
+    <div class="story-grid">
+      <div>
+        <span class="eyebrow" data-i18n="socEyebrow">社群媒體</span>
+        <h2 data-i18n="socH2">在社群平台上關注 DJB</h2>
+        <p data-i18n="socP">想掌握最新產品資訊與活動消息，歡迎在 Instagram 與 Facebook 上追蹤 DJB 台灣與美國官方帳號。</p>
+        <div class="hero-actions" style="margin-top:8px;">
+          <a class="btn btn-accent" href="https://www.instagram.com/djb_energy/" target="_blank" rel="noopener">
+            <span data-i18n="socIgTwBtn">Instagram（台灣）</span> <span class="arrow">↗</span>
+          </a>
+          <a class="btn btn-outline" href="https://www.facebook.com/DJBDrink/" target="_blank" rel="noopener">
+            <span data-i18n="socFbTwBtn">Facebook（台灣）</span> <span class="arrow">↗</span>
+          </a>
+          <a class="btn btn-outline" href="https://www.instagram.com/djb.usa" target="_blank" rel="noopener">
+            <span data-i18n="socIgUsBtn">Instagram（美國）</span> <span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+      <aside class="story-box">
+        <div class="icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4a4 4 0 11-7.9 1.2A4 4 0 0116 11.4z"/><path d="M17.5 6.5h.01"/></svg>
+        </div>
+        <p data-i18n="socBox">@djb_energy・@djb.usa</p>
+      </aside>
     </div>
   </div>
 </section>
@@ -614,7 +652,8 @@ window.PAGE_I18N = {
     "p3D": "俐落黑罐設計的氣泡水，純粹暢快。",
     "p4T": "CLEAR 純水",
     "p4D": "簡約設計的純淨瓶裝水，日常補水的清爽選擇。",
-    "collabEyebrow": "合作聯名", "collabH2": "為品牌客戶打造的聯名飲品", "collabSub": "除了自有產品，我們也為企業客戶開發專屬聯名飲品。", "collabTag": "聯名 Collaboration", "collabGogoro": "Gogoro 贈送給顧客的宣傳飲品。", "collabTigerair": "台灣虎航機上供應的飲品。", "collabAvengers": "與 Marvel／Disney 合作、以《復仇者聯盟》為主題的授權聯名能量飲。"
+    "collabEyebrow": "合作聯名", "collabH2": "為品牌客戶打造的聯名飲品", "collabSub": "除了自有產品，我們也為企業客戶開發專屬聯名飲品。", "collabTag": "聯名 Collaboration", "collabGogoro": "Gogoro 贈送給顧客的宣傳飲品。", "collabTigerair": "台灣虎航機上供應的飲品。", "collabAvengers": "與 Marvel／Disney 合作、以《復仇者聯盟》為主題的授權聯名能量飲。", "collabSilksClub": "與 Silks Club 酒店合作推出的客製化瓶裝水。",
+    "socEyebrow": "社群媒體", "socH2": "在社群平台上關注 DJB", "socP": "想掌握最新產品資訊與活動消息，歡迎在 Instagram 與 Facebook 上追蹤 DJB 台灣與美國官方帳號。", "socIgTwBtn": "Instagram（台灣）", "socFbTwBtn": "Facebook（台灣）", "socIgUsBtn": "Instagram（美國）", "socBox": "@djb_energy・@djb.usa"
   },
   "en": {
     "pageTitle": "Daijoubu | M&W International",
@@ -640,7 +679,8 @@ window.PAGE_I18N = {
     "p3D": "Sparkling water in a clean black can — simple and crisp.",
     "p4T": "CLEAR Pure Water",
     "p4D": "Minimally designed bottled water — an easy everyday choice for staying hydrated.",
-    "collabEyebrow": "Collaborations", "collabH2": "Co-branded drinks made for our clients", "collabSub": "Alongside our own products, we develop bespoke co-branded drinks for corporate clients.", "collabTag": "Collaboration", "collabGogoro": "A promotional drink Gogoro gives to its customers.", "collabTigerair": "Served on board Tigerair Taiwan flights.", "collabAvengers": "A licensed Avengers-themed energy drink produced with Marvel / Disney."
+    "collabEyebrow": "Collaborations", "collabH2": "Co-branded drinks made for our clients", "collabSub": "Alongside our own products, we develop bespoke co-branded drinks for corporate clients.", "collabTag": "Collaboration", "collabGogoro": "A promotional drink Gogoro gives to its customers.", "collabTigerair": "Served on board Tigerair Taiwan flights.", "collabAvengers": "A licensed Avengers-themed energy drink produced with Marvel / Disney.", "collabSilksClub": "A custom bottled water produced in collaboration with Silks Club hotel.",
+    "socEyebrow": "Social Media", "socH2": "Follow DJB On Social Media", "socP": "For the latest product news and events, follow DJB's official Taiwan and US accounts on Instagram and Facebook.", "socIgTwBtn": "Instagram (Taiwan)", "socFbTwBtn": "Facebook (Taiwan)", "socIgUsBtn": "Instagram (US)", "socBox": "@djb_energy \u00b7 @djb.usa", "collabSilksClub": "A custom bottled water produced in collaboration with Silks Club hotel."
   }
 };
 </script>
