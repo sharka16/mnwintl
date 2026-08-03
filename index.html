@@ -250,7 +250,7 @@
   .dining-logos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
   .dining-logo{background:#fff;border-radius:5px;height:104px;display:flex;align-items:center;justify-content:center;padding:18px 22px;}
   .dining-logo.on-dark{background:#111;}
-  .dining-logo img{max-width:100%;max-height:100%;object-fit:contain;}
+  .dining-logo img{max-width:100%;max-height:100%;min-width:0;min-height:0;object-fit:contain;}
   @media (max-width:640px){
     .dining-strip{padding:26px 20px;}
     .dining-logos{grid-template-columns:1fr;}
@@ -984,12 +984,31 @@
   // When a page is restored from bfcache (e.g. tapping the back button after
   // visiting another page), Safari sometimes fails to re-layout grid/flex
   // rows that contain images, even with width/height set on every <img>.
-  // Forcing a reflow on restore reliably fixes it.
+  // A whole-body reflow isn't always enough to invalidate Safari's cached
+  // track sizing for a NESTED grid/flex container, so each image-holding
+  // row is force-reflowed individually as well.
+  var REFLOW_SELECTORS = '.dining-logos, .about-content-grid, .biz-grid, ' +
+    '.brand-grid, .cap-grid, .footer-grid, .channel-row, .collab-grid, ' +
+    '.lineup-grid, .feature-grid, .story-grid, .siblings, .partner, ' +
+    '.approach-grid, .product-grid, .partner-logo, .cobrand-grid';
+
+  function forceReflow() {
+    document.querySelectorAll(REFLOW_SELECTORS).forEach(function (el) {
+      el.style.display = 'none';
+      void el.offsetHeight;
+      el.style.display = '';
+    });
+    document.body.style.display = 'none';
+    void document.body.offsetHeight;
+    document.body.style.display = '';
+  }
+
   window.addEventListener('pageshow', function (e) {
     if (e.persisted) {
-      document.body.style.display = 'none';
-      void document.body.offsetHeight; // force reflow
-      document.body.style.display = '';
+      forceReflow();
+      // images can still be mid-decode the instant pageshow fires;
+      // reflow again shortly after to catch any that settle late
+      setTimeout(forceReflow, 60);
     }
   });
 </script>

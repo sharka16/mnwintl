@@ -169,7 +169,7 @@ nav.primary a.current::after{width:100%;background:var(--accent);}
   color:var(--ink-soft);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
   border-bottom:1px solid var(--line);overflow:hidden;
 }
-.product-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+.product-thumb img{width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;display:block;}
 .product-thumb.contain{background:#fff;padding:14px;}
 .product-thumb.contain img{object-fit:contain;}
 /* collaborations */
@@ -177,7 +177,7 @@ nav.primary a.current::after{width:100%;background:var(--accent);}
 .collab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
 .collab-card{display:flex;gap:18px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:6px;padding:18px 20px;}
 .collab-thumb{flex:none;width:84px;height:104px;background:#fff;border:1px solid var(--line);border-radius:4px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-.collab-thumb img{width:100%;height:100%;object-fit:contain;}
+.collab-thumb img{width:100%;height:100%;min-width:0;min-height:0;object-fit:contain;}
 .collab-text .tag{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;}
 .collab-text h4{font-size:16px;font-weight:600;color:var(--navy-deep);margin:5px 0 4px;}
 .collab-text p{font-size:13px;color:var(--ink-soft);}
@@ -849,12 +849,31 @@ window.PAGE_I18N = {
   // When a page is restored from bfcache (e.g. tapping the back button after
   // visiting another page), Safari sometimes fails to re-layout grid/flex
   // rows that contain images, even with width/height set on every <img>.
-  // Forcing a reflow on restore reliably fixes it.
+  // A whole-body reflow isn't always enough to invalidate Safari's cached
+  // track sizing for a NESTED grid/flex container, so each image-holding
+  // row is force-reflowed individually as well.
+  var REFLOW_SELECTORS = '.dining-logos, .about-content-grid, .biz-grid, ' +
+    '.brand-grid, .cap-grid, .footer-grid, .channel-row, .collab-grid, ' +
+    '.lineup-grid, .feature-grid, .story-grid, .siblings, .partner, ' +
+    '.approach-grid, .product-grid, .partner-logo, .cobrand-grid';
+
+  function forceReflow() {
+    document.querySelectorAll(REFLOW_SELECTORS).forEach(function (el) {
+      el.style.display = 'none';
+      void el.offsetHeight;
+      el.style.display = '';
+    });
+    document.body.style.display = 'none';
+    void document.body.offsetHeight;
+    document.body.style.display = '';
+  }
+
   window.addEventListener('pageshow', function (e) {
     if (e.persisted) {
-      document.body.style.display = 'none';
-      void document.body.offsetHeight; // force reflow
-      document.body.style.display = '';
+      forceReflow();
+      // images can still be mid-decode the instant pageshow fires;
+      // reflow again shortly after to catch any that settle late
+      setTimeout(forceReflow, 60);
     }
   });
 </script>
