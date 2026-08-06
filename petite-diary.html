@@ -158,6 +158,16 @@ nav.primary a.current::after{width:100%;background:var(--accent);}
 
 /* ---------- product lineup ---------- */
 .lineup-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.lineup-grid-2{grid-template-columns:repeat(2,1fr);max-width:720px;}
+.lineup-grid-3{grid-template-columns:repeat(3,1fr);}
+.lineup-grid-single{grid-template-columns:1fr;max-width:340px;}
+.series-h{font-family:'Noto Serif TC',serif;font-size:18px;font-weight:600;color:var(--navy-deep);margin:48px 0 18px;padding-bottom:10px;border-bottom:1px solid var(--line);}
+.lineup-grid + .series-h{margin-top:52px;}
+.product-body .tag{display:block;font-size:11px;letter-spacing:.03em;color:var(--gold);font-weight:600;margin-bottom:10px;text-transform:none;}
+.site-link{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:3px;margin-top:6px;}
+.site-link:hover{border-bottom-color:var(--navy);}
+.site-link .arrow{transition:transform .25s ease;}
+.site-link:hover .arrow{transform:translate(2px,-2px);}
 .product-card{
   background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;
   display:flex;flex-direction:column;transition:transform .3s ease, box-shadow .3s ease;
@@ -328,7 +338,7 @@ footer ul a:hover{color:#fff;}
       <h1 data-i18n-html="heroH1">超纖日記<br>Petite Diary</h1>
       <p class="lede" data-i18n="heroLede">非油炸、高膳食纖維，讓零食也能是日常飲食的一部分。</p>
       <div class="hero-actions">
-        <a class="btn btn-accent" href="#lineup"><span data-i18n="lineupH2">產品陣容</span> <span class="arrow">→</span></a>
+        <a class="btn btn-accent" href="#what-we-do"><span data-i18n="wwdH2">M&amp;W 為超纖日記做的事</span> <span class="arrow">→</span></a>
         <a class="btn btn-outline" href="index.html#contact"><span data-i18n="navCta">合作夥伴洽談</span> <span class="arrow">→</span></a>
       </div>
     </div>
@@ -343,7 +353,7 @@ footer ul a:hover{color:#fff;}
         <span class="eyebrow" data-i18n="storyEyebrow">品牌故事</span>
         <h2 data-i18n="storyH2">好吃，也吃得安心</h2>
         <p data-i18n="storyP1">超纖日記從一個簡單的問題出發：為什麼想吃零食就得妥協？我們以非油炸製程與高膳食纖維配方，重新設計日常點心。</p>
-        <p data-i18n="storyP2">從產品開發、包裝設計到通路上架，超纖日記由 M&amp;W 團隊完整規劃，並持續拓展零售與電商通路。</p>
+        <p data-i18n="storyP2">M&amp;W 團隊負責超纖日記在台灣的物流配送，並持續拓展零售與電商通路；產品開發與品項規劃則由超纖日記團隊主導。</p>
       </div>
       <aside class="story-box">
         <div class="icon">
@@ -355,110 +365,99 @@ footer ul a:hover{color:#fff;}
   </div>
 </section>
 
+<!-- ================= WHAT WE DO ================= -->
+<section id="what-we-do">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="wwdEyebrow">我們的角色</span>
+      <h2 data-i18n="wwdH2">M&amp;W 為超纖日記做的事</h2>
+      <p data-i18n="wwdSub">超纖日記的產品開發與品項規劃由品牌團隊主導，M&amp;W 負責的是讓產品穩定送達消費者手中——物流配送，以及持續拓展的零售與電商通路。</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature">
+        <h4><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1" y="7" width="15" height="10" rx="1"/><path d="M16 10h3l3 3v4h-6z"/><circle cx="6" cy="19" r="1.6"/><circle cx="17.5" cy="19" r="1.6"/></svg><span data-i18n="wwd1T">物流配送</span></h4>
+        <p data-i18n="wwd1D">負責超纖日記在台灣的倉儲、訂單處理與配送作業，確保產品準時、完整送達通路端。</p>
+      </div>
+      <div class="feature">
+        <h4><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg><span data-i18n="wwd2T">零售通路拓展</span></h4>
+        <p data-i18n="wwd2D">持續為超纖日記開發新的零售據點，擴大產品在台灣市場的能見度與鋪貨範圍。</p>
+      </div>
+      <div class="feature">
+        <h4><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7l9-4 9 4-9 4-9-4zM3 7v10l9 4 9-4V7"/></svg><span data-i18n="wwd3T">電商經營拓展</span></h4>
+        <p data-i18n="wwd3D">同步經營與拓展線上購物通路，讓超纖日記在電商平台上持續成長。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= PRODUCT LINEUP ================= -->
-<!-- SCAFFOLD: replace the four product cards with real products + photography -->
 <section id="lineup">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow" data-i18n="lineupEyebrow">產品系列</span>
       <h2 data-i18n="lineupH2">產品陣容</h2>
-      <p data-i18n="lineupSub">以下為產品版位範例，實際品項與圖片待補。</p>
+      <p data-i18n="lineupSub">超纖日記目前共三大系列、六款口味，每包皆為非油炸、高蛋白高纖配方。</p>
+      <a class="site-link" href="https://www.petitediary.com/" target="_blank" rel="noopener"><span data-i18n="lineupSiteLink">前往超纖日記官方網站</span> <span class="arrow">↗</span></a>
     </div>
-    <div class="lineup-grid">
-      <article class="product-card">
-        <div class="product-thumb"><span data-i18n="phLabel">待補</span></div>
-        <div class="product-body">
-          <span class="tag">01</span>
-          <h3 data-i18n="p1T">貝果脆片・奶油蒜香</h3>
-          <p data-i18n="p1D">品牌代表口味，香氣濃郁。</p>
-        </div>
-      </article>
-      <article class="product-card">
-        <div class="product-thumb"><span data-i18n="phLabel">待補</span></div>
-        <div class="product-body">
-          <span class="tag">02</span>
-          <h3 data-i18n="p2T">貝果脆片・其他口味</h3>
-          <p data-i18n="p2D">口味擴充中。</p>
-        </div>
-      </article>
-      <article class="product-card">
-        <div class="product-thumb"><span data-i18n="phLabel">待補</span></div>
-        <div class="product-body">
-          <span class="tag">03</span>
-          <h3 data-i18n="p3T">系列新品</h3>
-          <p data-i18n="p3D">開發中的新品項。</p>
-        </div>
-      </article>
-      <article class="product-card">
-        <div class="product-thumb"><span data-i18n="phLabel">待補</span></div>
-        <div class="product-body">
-          <span class="tag">04</span>
-          <h3 data-i18n="p4T">量販組合</h3>
-          <p data-i18n="p4D">多入裝組合包。</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
 
-<!-- ================= FEATURES ================= -->
-<section class="features" id="features">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow" data-i18n="featuresEyebrow">產品特色</span>
-      <h2 data-i18n="featuresH2">為什麼選擇這個品牌</h2>
+    <h3 class="series-h" data-i18n="series1">貝果脆片系列</h3>
+    <div class="lineup-grid lineup-grid-2">
+      <article class="product-card">
+        <div class="product-thumb contain"><img src="pd-garlic-butter.png" alt="貝果脆片-奶油蒜香風味" width="500" height="500"></div>
+        <div class="product-body">
+          <span class="tag">103.4 kcal・3.0g 纖維・3.9g 蛋白質</span>
+          <h3 data-i18n="p1T">貝果脆片・奶油蒜香風味</h3>
+          <p data-i18n="p1D">濃郁香蒜與醇厚奶油交織，非油炸低溫慢烤，香甜薄脆。</p>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="product-thumb contain"><img src="pd-italian-pizza.png" alt="貝果脆片-義式披薩風味" width="500" height="500"></div>
+        <div class="product-body">
+          <span class="tag">99 kcal・2.6g 纖維・3.8g 蛋白質</span>
+          <h3 data-i18n="p2T">貝果脆片・義式披薩風味</h3>
+          <p data-i18n="p2D">濃郁番茄為基底的義式披薩粉，帶來異國風味的零食體驗。</p>
+        </div>
+      </article>
     </div>
-    <div class="feature-grid">
-      <div class="feature">
-        <h4><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="feat1T">非油炸製程</span></h4>
-        <p data-i18n="feat1D">以烘烤方式製作，減少油脂負擔，保留酥脆口感。</p>
-      </div>
-      <div class="feature">
-        <h4><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.6 5.6L21 9.4l-4.5 4.3 1.1 6.1L12 17l-5.6 2.8 1.1-6.1L3 9.4l6.4-.8z"/></svg><span data-i18n="feat2T">高膳食纖維</span></h4>
-        <p data-i18n="feat2D">每包含 3.0g 膳食纖維，補足日常飲食缺口。</p>
-      </div>
-      <div class="feature">
-        <h4><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-i18n="feat3T">營養標示透明</span></h4>
-        <p data-i18n="feat3D">熱量、纖維與蛋白質清楚標示，方便掌握攝取量。</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ================= SPECS ================= -->
-<!-- SCAFFOLD: fill the right-hand column with real specification data -->
-<section id="specs">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow" data-i18n="specsEyebrow">產品規格</span>
-      <h2 data-i18n="specsH2">規格與認證</h2>
+    <h3 class="series-h" data-i18n="series2">纖米脆脆系列</h3>
+    <div class="lineup-grid lineup-grid-3">
+      <article class="product-card">
+        <div class="product-thumb contain"><img src="pd-corn-chowder.png" alt="纖米脆脆-玉米濃湯PLUS風味" width="500" height="500"></div>
+        <div class="product-body">
+          <span class="tag">114.2 kcal・1.2g 纖維・2.9g 蛋白質</span>
+          <h3 data-i18n="p3T">纖米脆脆・玉米濃湯 PLUS 風味</h3>
+          <p data-i18n="p3D">超纖特調玉米濃湯調味粉，海苔與奶香滋味在口中爆發。</p>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="product-thumb contain"><img src="pd-cheese.png" alt="纖米脆脆-香濃起司風味" width="500" height="500"></div>
+        <div class="product-body">
+          <span class="tag">115.7 kcal・1.4g 纖維・2.5g 蛋白質</span>
+          <h3 data-i18n="p4T">纖米脆脆・香濃起司風味</h3>
+          <p data-i18n="p4D">多重香濃起司粉完美融合，濃郁芝香、酥脆口感。</p>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="product-thumb contain"><img src="pd-korean-spicy.png" alt="纖米脆脆-韓式甜辣風味" width="500" height="500"></div>
+        <div class="product-body">
+          <span class="tag">104 kcal・1.5g 纖維・2.9g 蛋白質</span>
+          <h3 data-i18n="p5T">纖米脆脆・韓式甜辣風味</h3>
+          <p data-i18n="p5D">超纖特調韓式甜辣粉，微甜微辣又微脆的滋味體驗。</p>
+        </div>
+      </article>
     </div>
-    <table class="spec-table">
-      <tbody>
-        <tr><th data-i18n="specName">品名</th><td><span data-i18n="phLabel">待補</span></td></tr>
-        <tr><th data-i18n="specSize">規格容量</th><td><span data-i18n="phLabel">待補</span></td></tr>
-        <tr><th data-i18n="specOrigin">產地</th><td><span data-i18n="phLabel">待補</span></td></tr>
-        <tr><th data-i18n="specShelf">保存期限</th><td><span data-i18n="phLabel">待補</span></td></tr>
-        <tr><th data-i18n="specCert">認證</th><td><span data-i18n="phLabel">待補</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
 
-<!-- ================= CHANNELS ================= -->
-<!-- SCAFFOLD: replace with the actual retail / e-commerce partners -->
-<section class="features" id="channels">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow" data-i18n="channelEyebrow">銷售通路</span>
-      <h2 data-i18n="channelH2">哪裡買得到</h2>
-      <p data-i18n="channelSub">通路資訊待補，以下為版位示意。</p>
-    </div>
-    <div class="channel-row">
-      <div class="channel"><b data-i18n="ch1">連鎖零售</b><span data-i18n="ch1d">全台主要通路</span></div>
-      <div class="channel"><b data-i18n="ch2">電商平台</b><span data-i18n="ch2d">線上購物通路</span></div>
-      <div class="channel"><b data-i18n="ch3">餐飲通路</b><span data-i18n="ch3d">餐廳與飲品店</span></div>
-      <div class="channel"><b data-i18n="ch4">海外市場</b><span data-i18n="ch4d">亞太地區代理</span></div>
+    <h3 class="series-h" data-i18n="series3">燕麥脆片系列</h3>
+    <div class="lineup-grid lineup-grid-single">
+      <article class="product-card">
+        <div class="product-thumb contain"><img src="pd-cocoa-coconut.png" alt="燕麥脆片-椰香可可風味" width="500" height="500"></div>
+        <div class="product-body">
+          <span class="tag">115.6 kcal・2.5g 纖維・4.9g 蛋白質</span>
+          <h3 data-i18n="p6T">燕麥脆片・椰香可可風味</h3>
+          <p data-i18n="p6D">苦甜巧克力與清新椰香交織，高纖燕麥基底帶來飽足感。</p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -471,7 +470,6 @@ footer ul a:hover{color:#fff;}
     <p data-i18n="ctaP">無論您是零售通路、餐飲業者或海外代理夥伴，我們都樂於一同討論合作方式。</p>
     <div class="cta-actions">
       <a class="btn btn-ghost-white" href="index.html#contact"><span data-i18n="ctaBtn1">聯絡我們</span> <span class="arrow">→</span></a>
-      <a class="btn btn-ghost-white" href="index.html#brands"><span data-i18n="ctaBtn2">回到品牌總覽</span> <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -580,22 +578,27 @@ window.PAGE_I18N = {
     "heroLede": "非油炸、高膳食纖維，讓零食也能是日常飲食的一部分。",
     "storyH2": "好吃，也吃得安心",
     "storyP1": "超纖日記從一個簡單的問題出發：為什麼想吃零食就得妥協？我們以非油炸製程與高膳食纖維配方，重新設計日常點心。",
-    "storyP2": "從產品開發、包裝設計到通路上架，超纖日記由 M&W 團隊完整規劃，並持續拓展零售與電商通路。",
+    "storyP2": "M&W 團隊負責超纖日記在台灣的物流配送，並持續拓展零售與電商通路；產品開發與品項規劃則由超纖日記團隊主導。",
     "storyBox": "每包 25g，含 3.0g 膳食纖維與 3.99g 蛋白質，非油炸製程，熱量 103.4 大卡。",
-    "feat1T": "非油炸製程",
-    "feat1D": "以烘烤方式製作，減少油脂負擔，保留酥脆口感。",
-    "feat2T": "高膳食纖維",
-    "feat2D": "每包含 3.0g 膳食纖維，補足日常飲食缺口。",
-    "feat3T": "營養標示透明",
-    "feat3D": "熱量、纖維與蛋白質清楚標示，方便掌握攝取量。",
-    "p1T": "貝果脆片・奶油蒜香",
-    "p1D": "品牌代表口味，香氣濃郁。",
-    "p2T": "貝果脆片・其他口味",
-    "p2D": "口味擴充中。",
-    "p3T": "系列新品",
-    "p3D": "開發中的新品項。",
-    "p4T": "量販組合",
-    "p4D": "多入裝組合包。"
+    "wwdEyebrow": "我們的角色",
+    "wwdH2": "M&W 為超纖日記做的事",
+    "wwdSub": "超纖日記的產品開發與品項規劃由品牌團隊主導，M&W 負責的是讓產品穩定送達消費者手中——物流配送，以及持續拓展的零售與電商通路。",
+    "wwd1T": "物流配送", "wwd1D": "負責超纖日記在台灣的倉儲、訂單處理與配送作業，確保產品準時、完整送達通路端。",
+    "wwd2T": "零售通路拓展", "wwd2D": "持續為超纖日記開發新的零售據點，擴大產品在台灣市場的能見度與鋪貨範圍。",
+    "wwd3T": "電商經營拓展", "wwd3D": "同步經營與拓展線上購物通路，讓超纖日記在電商平台上持續成長。",
+    "lineupEyebrow": "產品系列",
+    "lineupH2": "產品陣容",
+    "lineupSub": "超纖日記目前共三大系列、六款口味，每包皆為非油炸、高蛋白高纖配方。",
+    "lineupSiteLink": "前往超纖日記官方網站",
+    "series1": "貝果脆片系列",
+    "series2": "纖米脆脆系列",
+    "series3": "燕麥脆片系列",
+    "p1T": "貝果脆片・奶油蒜香風味", "p1D": "濃郁香蒜與醇厚奶油交織，非油炸低溫慢烤，香甜薄脆。",
+    "p2T": "貝果脆片・義式披薩風味", "p2D": "濃郁番茄為基底的義式披薩粉，帶來異國風味的零食體驗。",
+    "p3T": "纖米脆脆・玉米濃湯 PLUS 風味", "p3D": "超纖特調玉米濃湯調味粉，海苔與奶香滋味在口中爆發。",
+    "p4T": "纖米脆脆・香濃起司風味", "p4D": "多重香濃起司粉完美融合，濃郁芝香、酥脆口感。",
+    "p5T": "纖米脆脆・韓式甜辣風味", "p5D": "超纖特調韓式甜辣粉，微甜微辣又微脆的滋味體驗。",
+    "p6T": "燕麥脆片・椰香可可風味", "p6D": "苦甜巧克力與清新椰香交織，高纖燕麥基底帶來飽足感。"
   },
   "en": {
     "pageTitle": "Petite Diary 超纖日記 | M&W International",
@@ -605,22 +608,27 @@ window.PAGE_I18N = {
     "heroLede": "Non-fried and high in dietary fibre — a snack that earns its place in the daily routine.",
     "storyH2": "Tastes Good, Sits Well",
     "storyP1": "Petite Diary started from a simple question: why should wanting a snack mean making a compromise? We rebuilt the everyday snack around a non-fried process and a high-fibre formulation.",
-    "storyP2": "From product development and packaging design through to shelf placement, Petite Diary is planned end-to-end by the M&W team, with continued expansion across retail and e-commerce.",
+    "storyP2": "The M&W team handles Petite Diary's logistics and fulfilment in Taiwan, with continued expansion across retail and e-commerce. Product development and range planning remain led by the Petite Diary team.",
     "storyBox": "25g per pack, with 3.0g dietary fibre and 3.99g protein, non-fried, at 103.4 kcal.",
-    "feat1T": "Non-Fried",
-    "feat1D": "Baked rather than fried, cutting the oil load while keeping the crunch.",
-    "feat2T": "High In Fibre",
-    "feat2D": "3.0g of dietary fibre per pack, helping close an everyday nutritional gap.",
-    "feat3T": "Transparent Labelling",
-    "feat3D": "Calories, fibre and protein clearly stated so intake is easy to track.",
-    "p1T": "Bagel Chips · Garlic Butter",
-    "p1D": "The signature flavour, rich and aromatic.",
-    "p2T": "Bagel Chips · More Flavours",
-    "p2D": "Range in expansion.",
-    "p3T": "New Additions",
-    "p3D": "Products currently in development.",
-    "p4T": "Multipacks",
-    "p4D": "Value formats for households."
+    "wwdEyebrow": "Our Role",
+    "wwdH2": "What M&W Does For Petite Diary",
+    "wwdSub": "Product development and range planning stay with the Petite Diary team. M&W's job is getting the product reliably to customers — logistics and fulfilment, plus continued expansion across retail and e-commerce.",
+    "wwd1T": "Logistics & Fulfilment", "wwd1D": "Handling warehousing, order processing and delivery for Petite Diary in Taiwan, keeping product moving to retailers on time and intact.",
+    "wwd2T": "Retail Channel Expansion", "wwd2D": "Continually developing new retail listings for Petite Diary, growing its shelf presence and reach across Taiwan.",
+    "wwd3T": "E-commerce Expansion", "wwd3D": "Running and expanding Petite Diary's presence on online marketplaces alongside its retail growth.",
+    "lineupEyebrow": "Product Range",
+    "lineupH2": "The Lineup",
+    "lineupSub": "Petite Diary currently spans three series and six flavours, each non-fried, high-protein and high-fibre.",
+    "lineupSiteLink": "Visit the Petite Diary Official Site",
+    "series1": "Bagel Chips",
+    "series2": "Rice Chips",
+    "series3": "Oat Chips",
+    "p1T": "Bagel Chips \u00b7 Garlic Butter", "p1D": "Rich garlic and butter, baked low and slow rather than fried, light and crisp.",
+    "p2T": "Bagel Chips \u00b7 Italian Pizza", "p2D": "A tomato-forward Italian pizza seasoning for a snack with a foreign-holiday feel.",
+    "p3T": "Rice Chips \u00b7 Corn Chowder PLUS", "p3D": "House corn chowder seasoning with nori and creamy notes in every bite.",
+    "p4T": "Rice Chips \u00b7 Creamy Cheese", "p4D": "Layers of rich cheese seasoning, savoury and crisp, hard to put down.",
+    "p5T": "Rice Chips \u00b7 Korean Sweet & Spicy", "p5D": "House Korean sweet-and-spicy seasoning with a light, crisp crunch.",
+    "p6T": "Oat Chips \u00b7 Coconut Cocoa", "p6D": "Bittersweet chocolate meets tropical coconut on a high-fibre oat base."
   }
 };
 </script>
@@ -791,12 +799,31 @@ window.PAGE_I18N = {
   // When a page is restored from bfcache (e.g. tapping the back button after
   // visiting another page), Safari sometimes fails to re-layout grid/flex
   // rows that contain images, even with width/height set on every <img>.
-  // Forcing a reflow on restore reliably fixes it.
+  // A whole-body reflow isn't always enough to invalidate Safari's cached
+  // track sizing for a NESTED grid/flex container, so each image-holding
+  // row is force-reflowed individually as well.
+  var REFLOW_SELECTORS = '.dining-logos, .about-content-grid, .biz-grid, ' +
+    '.brand-grid, .cap-grid, .footer-grid, .channel-row, .collab-grid, ' +
+    '.lineup-grid, .feature-grid, .story-grid, .siblings, .partner, ' +
+    '.approach-grid, .product-grid, .partner-logo, .cobrand-grid';
+
+  function forceReflow() {
+    document.querySelectorAll(REFLOW_SELECTORS).forEach(function (el) {
+      el.style.display = 'none';
+      void el.offsetHeight;
+      el.style.display = '';
+    });
+    document.body.style.display = 'none';
+    void document.body.offsetHeight;
+    document.body.style.display = '';
+  }
+
   window.addEventListener('pageshow', function (e) {
     if (e.persisted) {
-      document.body.style.display = 'none';
-      void document.body.offsetHeight; // force reflow
-      document.body.style.display = '';
+      forceReflow();
+      // images can still be mid-decode the instant pageshow fires;
+      // reflow again shortly after to catch any that settle late
+      setTimeout(forceReflow, 60);
     }
   });
 </script>
