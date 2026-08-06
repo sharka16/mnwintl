@@ -157,12 +157,9 @@ nav.primary a.current::after{width:100%;background:var(--accent);}
 .story-box p{font-size:15px;color:var(--ink-soft);margin:0;}
 
 /* ---------- product lineup ---------- */
-.lineup-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
-.lineup-grid-2{grid-template-columns:repeat(2,1fr);max-width:720px;}
-.lineup-grid-3{grid-template-columns:repeat(3,1fr);}
-.lineup-grid-single{grid-template-columns:1fr;max-width:340px;}
-.series-h{font-family:'Noto Serif TC',serif;font-size:18px;font-weight:600;color:var(--navy-deep);margin:48px 0 18px;padding-bottom:10px;border-bottom:1px solid var(--line);}
-.lineup-grid + .series-h{margin-top:52px;}
+.lineup-grid{display:grid;grid-template-columns:repeat(auto-fit,200px);gap:20px;}
+.series-h{font-family:'Noto Serif TC',serif;font-size:17px;font-weight:600;color:var(--navy-deep);margin:32px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--line);}
+.lineup-grid + .series-h{margin-top:36px;}
 .product-body .tag{display:block;font-size:11px;letter-spacing:.03em;color:var(--gold);font-weight:600;margin-bottom:10px;text-transform:none;}
 .site-link{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:3px;margin-top:6px;}
 .site-link:hover{border-bottom-color:var(--navy);}
@@ -248,7 +245,6 @@ footer ul a:hover{color:#fff;}
 /* ---------- responsive ---------- */
 @media (max-width:960px){
   .story-grid{grid-template-columns:1fr;}
-  .lineup-grid{grid-template-columns:repeat(2,1fr);}
   .feature-grid{grid-template-columns:1fr;gap:28px;}
   .channel-row{grid-template-columns:repeat(2,1fr);}
   .siblings{grid-template-columns:repeat(2,1fr);}
@@ -263,7 +259,6 @@ footer ul a:hover{color:#fff;}
   .brand-hero-bg{background-position:80% bottom;}
   .brand-hero.on-light .brand-hero-scrim{background:linear-gradient(180deg,rgba(255,255,255,.95) 0%,rgba(255,255,255,.85) 40%,rgba(255,255,255,0) 75%);}
   .brand-hero.on-dark .brand-hero-scrim{background:linear-gradient(180deg,rgba(8,10,16,.92) 0%,rgba(8,10,16,.7) 40%,rgba(8,10,16,0) 75%);}
-  .lineup-grid{grid-template-columns:1fr;}
   .channel-row{grid-template-columns:1fr;}
   .siblings{grid-template-columns:1fr;}
   .spec-table th{width:40%;}
@@ -403,12 +398,12 @@ footer ul a:hover{color:#fff;}
       <a class="site-link" href="https://www.petitediary.com/" target="_blank" rel="noopener"><span data-i18n="lineupSiteLink">前往超纖日記官方網站</span> <span class="arrow">↗</span></a>
     </div>
 
-    <h3 class="series-h" data-i18n="series1">貝果脆片系列</h3>
-    <div class="lineup-grid lineup-grid-2">
+    <h3 class="series-h" data-i18n="series1">貝果脆片・燕麥脆片系列</h3>
+    <div class="lineup-grid">
       <article class="product-card">
         <div class="product-thumb contain"><img src="pd-garlic-butter.png" alt="貝果脆片-奶油蒜香風味" width="500" height="500"></div>
         <div class="product-body">
-          <span class="tag">103.4 kcal・3.0g 纖維・3.9g 蛋白質</span>
+          <span class="tag">103 kcal</span>
           <h3 data-i18n="p1T">貝果脆片・奶油蒜香風味</h3>
           <p data-i18n="p1D">濃郁香蒜與醇厚奶油交織，非油炸低溫慢烤，香甜薄脆。</p>
         </div>
@@ -416,19 +411,27 @@ footer ul a:hover{color:#fff;}
       <article class="product-card">
         <div class="product-thumb contain"><img src="pd-italian-pizza.png" alt="貝果脆片-義式披薩風味" width="500" height="500"></div>
         <div class="product-body">
-          <span class="tag">99 kcal・2.6g 纖維・3.8g 蛋白質</span>
+          <span class="tag">99 kcal</span>
           <h3 data-i18n="p2T">貝果脆片・義式披薩風味</h3>
           <p data-i18n="p2D">濃郁番茄為基底的義式披薩粉，帶來異國風味的零食體驗。</p>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="product-thumb contain"><img src="pd-cocoa-coconut.png" alt="燕麥脆片-椰香可可風味" width="500" height="500"></div>
+        <div class="product-body">
+          <span class="tag">116 kcal</span>
+          <h3 data-i18n="p6T">燕麥脆片・椰香可可風味</h3>
+          <p data-i18n="p6D">苦甜巧克力與清新椰香交織，高纖燕麥基底帶來飽足感。</p>
         </div>
       </article>
     </div>
 
     <h3 class="series-h" data-i18n="series2">纖米脆脆系列</h3>
-    <div class="lineup-grid lineup-grid-3">
+    <div class="lineup-grid">
       <article class="product-card">
         <div class="product-thumb contain"><img src="pd-corn-chowder.png" alt="纖米脆脆-玉米濃湯PLUS風味" width="500" height="500"></div>
         <div class="product-body">
-          <span class="tag">114.2 kcal・1.2g 纖維・2.9g 蛋白質</span>
+          <span class="tag">114 kcal</span>
           <h3 data-i18n="p3T">纖米脆脆・玉米濃湯 PLUS 風味</h3>
           <p data-i18n="p3D">超纖特調玉米濃湯調味粉，海苔與奶香滋味在口中爆發。</p>
         </div>
@@ -436,7 +439,7 @@ footer ul a:hover{color:#fff;}
       <article class="product-card">
         <div class="product-thumb contain"><img src="pd-cheese.png" alt="纖米脆脆-香濃起司風味" width="500" height="500"></div>
         <div class="product-body">
-          <span class="tag">115.7 kcal・1.4g 纖維・2.5g 蛋白質</span>
+          <span class="tag">116 kcal</span>
           <h3 data-i18n="p4T">纖米脆脆・香濃起司風味</h3>
           <p data-i18n="p4D">多重香濃起司粉完美融合，濃郁芝香、酥脆口感。</p>
         </div>
@@ -444,21 +447,9 @@ footer ul a:hover{color:#fff;}
       <article class="product-card">
         <div class="product-thumb contain"><img src="pd-korean-spicy.png" alt="纖米脆脆-韓式甜辣風味" width="500" height="500"></div>
         <div class="product-body">
-          <span class="tag">104 kcal・1.5g 纖維・2.9g 蛋白質</span>
+          <span class="tag">104 kcal</span>
           <h3 data-i18n="p5T">纖米脆脆・韓式甜辣風味</h3>
           <p data-i18n="p5D">超纖特調韓式甜辣粉，微甜微辣又微脆的滋味體驗。</p>
-        </div>
-      </article>
-    </div>
-
-    <h3 class="series-h" data-i18n="series3">燕麥脆片系列</h3>
-    <div class="lineup-grid lineup-grid-single">
-      <article class="product-card">
-        <div class="product-thumb contain"><img src="pd-cocoa-coconut.png" alt="燕麥脆片-椰香可可風味" width="500" height="500"></div>
-        <div class="product-body">
-          <span class="tag">115.6 kcal・2.5g 纖維・4.9g 蛋白質</span>
-          <h3 data-i18n="p6T">燕麥脆片・椰香可可風味</h3>
-          <p data-i18n="p6D">苦甜巧克力與清新椰香交織，高纖燕麥基底帶來飽足感。</p>
         </div>
       </article>
     </div>
@@ -593,9 +584,8 @@ window.PAGE_I18N = {
     "lineupH2": "產品陣容",
     "lineupSub": "超纖日記目前共三大系列、六款口味，每包皆為非油炸、高蛋白高纖配方。",
     "lineupSiteLink": "前往超纖日記官方網站",
-    "series1": "貝果脆片系列",
+    "series1": "貝果脆片・燕麥脆片系列",
     "series2": "纖米脆脆系列",
-    "series3": "燕麥脆片系列",
     "p1T": "貝果脆片・奶油蒜香風味", "p1D": "濃郁香蒜與醇厚奶油交織，非油炸低溫慢烤，香甜薄脆。",
     "p2T": "貝果脆片・義式披薩風味", "p2D": "濃郁番茄為基底的義式披薩粉，帶來異國風味的零食體驗。",
     "p3T": "纖米脆脆・玉米濃湯 PLUS 風味", "p3D": "超纖特調玉米濃湯調味粉，海苔與奶香滋味在口中爆發。",
@@ -623,9 +613,8 @@ window.PAGE_I18N = {
     "lineupH2": "The Lineup",
     "lineupSub": "Petite Diary currently spans three series and six flavours, each non-fried, high-protein and high-fibre.",
     "lineupSiteLink": "Visit the Petite Diary Official Site",
-    "series1": "Bagel Chips",
+    "series1": "Bagel Chips & Oat Chips",
     "series2": "Rice Chips",
-    "series3": "Oat Chips",
     "p1T": "Bagel Chips \u00b7 Garlic Butter", "p1D": "Rich garlic and butter, baked low and slow rather than fried, light and crisp.",
     "p2T": "Bagel Chips \u00b7 Italian Pizza", "p2D": "A tomato-forward Italian pizza seasoning for a snack with a foreign-holiday feel.",
     "p3T": "Rice Chips \u00b7 Corn Chowder PLUS", "p3D": "House corn chowder seasoning with nori and creamy notes in every bite.",
