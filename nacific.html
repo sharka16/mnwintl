@@ -157,18 +157,28 @@ nav.primary a.current::after{width:100%;background:var(--accent);}
 .story-box p{font-size:15px;color:var(--ink-soft);margin:0;}
 
 /* ---------- product lineup ---------- */
-.lineup-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.lineup-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.series-h{font-family:'Noto Serif TC',serif;font-size:17px;font-weight:600;color:var(--navy-deep);margin:32px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--line);}
+.lineup-grid + .series-h{margin-top:36px;}
+.lineup-note{font-size:13.5px;color:var(--ink-soft);margin-top:36px;margin-bottom:6px;}
+.site-link{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:3px;}
+.site-link:hover{border-bottom-color:var(--navy);}
+.site-link .arrow{transition:transform .25s ease;}
+.site-link:hover .arrow{transform:translate(2px,-2px);}
 .product-card{
   background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;
   display:flex;flex-direction:column;transition:transform .3s ease, box-shadow .3s ease;
 }
 .product-card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(21,42,78,.12);}
 .product-thumb{
-  aspect-ratio:4/3;background:var(--paper-alt);
+  aspect-ratio:1/1;background:var(--paper-alt);
   display:flex;align-items:center;justify-content:center;
   color:var(--ink-soft);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
-  border-bottom:1px solid var(--line);
+  border-bottom:1px solid var(--line);overflow:hidden;
 }
+.product-thumb img{width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;display:block;}
+.product-thumb.contain{background:#fff;padding:14px;}
+.product-thumb.contain img{object-fit:contain;}
 .product-body{padding:22px 20px 26px;flex:1;display:flex;flex-direction:column;}
 .product-body .tag{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:8px;}
 .product-body h3{font-size:17px;font-weight:600;color:var(--navy-deep);margin-bottom:10px;}
@@ -355,110 +365,100 @@ footer ul a:hover{color:#fff;}
   </div>
 </section>
 
-<!-- ================= PRODUCT LINEUP ================= -->
-<!-- SCAFFOLD: replace the four product cards with real products + photography -->
+<!-- ================= PRODUCT LINES ================= -->
+<!-- SCAFFOLD: product names, line names and formats are real (from en.nacific.com).
+     Photography is intentionally left as placeholders — NACIFIC's product photos
+     are their own commercial assets, not something to copy from their live store.
+     Replace each .product-thumb with real photography from an official asset kit. -->
 <section id="lineup">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow" data-i18n="lineupEyebrow">產品系列</span>
       <h2 data-i18n="lineupH2">產品陣容</h2>
-      <p data-i18n="lineupSub">以下為產品版位範例，實際品項與圖片待補。</p>
+      <p data-i18n="lineupSub">NACIFIC 目前主打兩大系列：RICE+PEPTA 與 CICA+PDRN，分別針對彈潤與舒緩兩種保養訴求。</p>
     </div>
+
+    <h3 class="series-h">RICE+PEPTA</h3>
+    <div class="lineup-grid">
+      <article class="product-card">
+        <div class="product-thumb contain"><img src="np-rice-cleansing-balm.jpg" alt="Rice Pepta Collagen Sherbet Cleansing Balm" width="700" height="700"></div>
+        <div class="product-body">
+          <span class="tag" data-i18n="np1S">卸妝膏</span>
+          <h3 data-i18n="np1T">Rice Pepta Collagen Sherbet Cleansing Balm</h3>
+          <p data-i18n="np1D">雪酪質地卸妝膏，米萃胜肽與膠原蛋白配方，深層清潔同時兼顧肌膚光澤。</p>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="product-thumb contain"><img src="np-rice-milky-serum.jpg" alt="Rice Pepta Collagen Glow Milky Serum" width="700" height="700"></div>
+        <div class="product-body">
+          <span class="tag" data-i18n="np2S">精華液</span>
+          <h3 data-i18n="np2T">Rice Pepta Collagen Glow Milky Serum</h3>
+          <p data-i18n="np2D">乳狀質地精華，米萃胜肽搭配膠原蛋白，加強肌膚光澤與彈性。</p>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="product-thumb contain"><img src="np-rice-gel-mask.jpg" alt="NACIFIC Rice Pepta Collagen Gel Mask" width="700" height="700"></div>
+        <div class="product-body">
+          <span class="tag" data-i18n="np3S">凝膠面膜</span>
+          <h3 data-i18n="np3T">Rice Pepta Collagen Gel Mask</h3>
+          <p data-i18n="np3D">水凝膠面膜，米萃胜肽與膠原蛋白配方，密集保濕同時提升肌膚光澤。</p>
+        </div>
+      </article>
+    </div>
+
+    <h3 class="series-h">CICA+PDRN</h3>
     <div class="lineup-grid">
       <article class="product-card">
         <div class="product-thumb"><span data-i18n="phLabel">待補</span></div>
         <div class="product-body">
-          <span class="tag">01</span>
-          <h3 data-i18n="p1T">精華液 Serum</h3>
-          <p data-i18n="p1D">品牌核心品項，主打舒緩。</p>
+          <span class="tag" data-i18n="np4S">化妝水</span>
+          <h3 data-i18n="np4T">CICA PDRN Toner</h3>
+          <p data-i18n="np4D">積雪草與 PDRN 為核心，溫和舒緩同時補充水分，適合日常泛紅肌膚。</p>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="product-thumb contain"><img src="np-cica-serum.jpg" alt="CICA PDRN Serum" width="700" height="700"></div>
+        <div class="product-body">
+          <span class="tag" data-i18n="np5S">精華液</span>
+          <h3 data-i18n="np5T">CICA PDRN Serum</h3>
+          <p data-i18n="np5D">品牌核心品項，積雪草與 PDRN 加強修護與舒緩，質地清爽好吸收。</p>
         </div>
       </article>
       <article class="product-card">
         <div class="product-thumb"><span data-i18n="phLabel">待補</span></div>
         <div class="product-body">
-          <span class="tag">02</span>
-          <h3 data-i18n="p2T">化妝水 Toner</h3>
-          <p data-i18n="p2D">保養第一步，補水打底。</p>
-        </div>
-      </article>
-      <article class="product-card">
-        <div class="product-thumb"><span data-i18n="phLabel">待補</span></div>
-        <div class="product-body">
-          <span class="tag">03</span>
-          <h3 data-i18n="p3T">面膜 Mask</h3>
-          <p data-i18n="p3D">加強保濕的密集護理。</p>
-        </div>
-      </article>
-      <article class="product-card">
-        <div class="product-thumb"><span data-i18n="phLabel">待補</span></div>
-        <div class="product-body">
-          <span class="tag">04</span>
-          <h3 data-i18n="p4T">乳霜 Cream</h3>
-          <p data-i18n="p4D">鎖水收尾，維持屏障。</p>
+          <span class="tag" data-i18n="np6S">乳霜</span>
+          <h3 data-i18n="np6T">CICA PDRN Cream</h3>
+          <p data-i18n="np6D">鎖水收尾乳霜，維持肌膚屏障，舒緩日常乾燥與敏感狀況。</p>
         </div>
       </article>
     </div>
+
+    <p class="lineup-note" data-i18n="lineupNote">完整系列與最新品項，請參考 NACIFIC 官方網站。</p>
+    <a class="site-link" href="https://nacific.com/" target="_blank" rel="noopener"><span data-i18n="lineupSiteLink">前往 NACIFIC 官方網站</span> <span class="arrow">↗</span></a>
   </div>
 </section>
 
-<!-- ================= FEATURES ================= -->
+<!-- ================= INGREDIENT SCIENCE ================= -->
 <section class="features" id="features">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow" data-i18n="featuresEyebrow">產品特色</span>
-      <h2 data-i18n="featuresH2">為什麼選擇這個品牌</h2>
+      <span class="eyebrow" data-i18n="featuresEyebrow">成分科學</span>
+      <h2 data-i18n="featuresH2">兩大系列，各有主打成分</h2>
     </div>
     <div class="feature-grid">
       <div class="feature">
-        <h4><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="feat1T">天然植萃</span></h4>
-        <p data-i18n="feat1D">以植物萃取為主的配方設計，成分標示清楚。</p>
+        <h4><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.6 5.6L21 9.4l-4.5 4.3 1.1 6.1L12 17l-5.6 2.8 1.1-6.1L3 9.4l6.4-.8z"/></svg><span data-i18n="feat1T">PDRN</span></h4>
+        <p data-i18n="feat1D">近年韓妝熱門的修護型成分，常用於肌膚再生與屏障修復訴求的保養品中。</p>
       </div>
       <div class="feature">
-        <h4><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.6 5.6L21 9.4l-4.5 4.3 1.1 6.1L12 17l-5.6 2.8 1.1-6.1L3 9.4l6.4-.8z"/></svg><span data-i18n="feat2T">舒緩保濕</span></h4>
-        <p data-i18n="feat2D">針對日常泛紅與乾燥設計，質地清爽好吸收。</p>
+        <h4><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="feat2T">積雪草 Centella</span></h4>
+        <p data-i18n="feat2D">傳統舒緩植萃成分，常用於泛紅、敏感肌膚的日常保養。</p>
       </div>
       <div class="feature">
-        <h4><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-i18n="feat3T">低刺激測試</span></h4>
-        <p data-i18n="feat3D">通過肌膚刺激性測試，適合敏弱肌日常使用。</p>
+        <h4><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-i18n="feat3T">米萃胜肽與膠原蛋白</span></h4>
+        <p data-i18n="feat3D">來自稻米的胜肽成分搭配膠原蛋白，訴求提升肌膚彈潤與光澤感。</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= SPECS ================= -->
-<!-- SCAFFOLD: fill the right-hand column with real specification data -->
-<section id="specs">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow" data-i18n="specsEyebrow">產品規格</span>
-      <h2 data-i18n="specsH2">規格與認證</h2>
-    </div>
-    <table class="spec-table">
-      <tbody>
-        <tr><th data-i18n="specName">品名</th><td><span data-i18n="phLabel">待補</span></td></tr>
-        <tr><th data-i18n="specSize">規格容量</th><td><span data-i18n="phLabel">待補</span></td></tr>
-        <tr><th data-i18n="specOrigin">產地</th><td><span data-i18n="phLabel">待補</span></td></tr>
-        <tr><th data-i18n="specShelf">保存期限</th><td><span data-i18n="phLabel">待補</span></td></tr>
-        <tr><th data-i18n="specCert">認證</th><td><span data-i18n="phLabel">待補</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- ================= CHANNELS ================= -->
-<!-- SCAFFOLD: replace with the actual retail / e-commerce partners -->
-<section class="features" id="channels">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow" data-i18n="channelEyebrow">銷售通路</span>
-      <h2 data-i18n="channelH2">哪裡買得到</h2>
-      <p data-i18n="channelSub">通路資訊待補，以下為版位示意。</p>
-    </div>
-    <div class="channel-row">
-      <div class="channel"><b data-i18n="ch1">連鎖零售</b><span data-i18n="ch1d">全台主要通路</span></div>
-      <div class="channel"><b data-i18n="ch2">電商平台</b><span data-i18n="ch2d">線上購物通路</span></div>
-      <div class="channel"><b data-i18n="ch3">餐飲通路</b><span data-i18n="ch3d">餐廳與飲品店</span></div>
-      <div class="channel"><b data-i18n="ch4">海外市場</b><span data-i18n="ch4d">亞太地區代理</span></div>
     </div>
   </div>
 </section>
@@ -471,7 +471,6 @@ footer ul a:hover{color:#fff;}
     <p data-i18n="ctaP">無論您是零售通路、餐飲業者或海外代理夥伴，我們都樂於一同討論合作方式。</p>
     <div class="cta-actions">
       <a class="btn btn-ghost-white" href="index.html#contact"><span data-i18n="ctaBtn1">聯絡我們</span> <span class="arrow">→</span></a>
-      <a class="btn btn-ghost-white" href="index.html#brands"><span data-i18n="ctaBtn2">回到品牌總覽</span> <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -582,20 +581,12 @@ window.PAGE_I18N = {
     "storyP1": "NACIFIC 以自然萃取成分結合現代配方科學，主打舒緩、保濕與修護，適合追求成分透明的消費者。",
     "storyP2": "M&W 協助 NACIFIC 進入亞太市場，提供在地化調整、法規諮詢、通路佈局與品牌溝通支援。",
     "storyBox": "以積雪草與 PDRN 等成分為核心，主打舒緩與保濕，通過肌膚刺激性測試。",
-    "feat1T": "天然植萃",
-    "feat1D": "以植物萃取為主的配方設計，成分標示清楚。",
-    "feat2T": "舒緩保濕",
-    "feat2D": "針對日常泛紅與乾燥設計，質地清爽好吸收。",
-    "feat3T": "低刺激測試",
-    "feat3D": "通過肌膚刺激性測試，適合敏弱肌日常使用。",
-    "p1T": "精華液 Serum",
-    "p1D": "品牌核心品項，主打舒緩。",
-    "p2T": "化妝水 Toner",
-    "p2D": "保養第一步，補水打底。",
-    "p3T": "面膜 Mask",
-    "p3D": "加強保濕的密集護理。",
-    "p4T": "乳霜 Cream",
-    "p4D": "鎖水收尾，維持屏障。"
+    "feat1T": "PDRN",
+    "feat1D": "近年韓妝熱門的修護型成分，常用於肌膚再生與屏障修復訴求的保養品中。",
+    "feat2T": "積雪草 Centella",
+    "feat2D": "傳統舒緩植萃成分，常用於泛紅、敏感肌膚的日常保養。",
+    "feat3T": "米萃胜肽與膠原蛋白",
+    "feat3D": "來自稻米的胜肽成分搭配膠原蛋白，訴求提升肌膚彈潤與光澤感。"
   },
   "en": {
     "pageTitle": "NACIFIC | M&W International",
@@ -607,20 +598,12 @@ window.PAGE_I18N = {
     "storyP1": "NACIFIC pairs naturally derived extracts with modern formulation science, focusing on soothing, hydration and barrier repair for people who read the ingredient list.",
     "storyP2": "M&W supports NACIFIC's entry into Asia-Pacific markets with localisation, regulatory guidance, channel development and brand communication.",
     "storyBox": "Built around actives such as centella and PDRN, focused on soothing and hydration, and skin-irritation tested.",
-    "feat1T": "Naturally Derived",
-    "feat1D": "Formulas led by botanical extracts, with clear ingredient labelling.",
-    "feat2T": "Soothing & Hydrating",
-    "feat2D": "Made for everyday redness and dryness, in a light, fast-absorbing texture.",
-    "feat3T": "Irritation Tested",
-    "feat3D": "Skin-irritation tested, suitable for sensitive skin used daily.",
-    "p1T": "Serum",
-    "p1D": "The hero product, focused on calming.",
-    "p2T": "Toner",
-    "p2D": "First step hydration and prep.",
-    "p3T": "Mask",
-    "p3D": "Intensive hydration treatment.",
-    "p4T": "Cream",
-    "p4D": "Seals in moisture and supports the barrier."
+    "feat1T": "PDRN",
+    "feat1D": "A repair-focused ingredient that's become popular in Korean skincare, often used for regeneration and barrier-repair formulas.",
+    "feat2T": "Centella (Cica)",
+    "feat2D": "A traditional soothing botanical extract, commonly used for everyday redness and sensitive skin.",
+    "feat3T": "Rice Peptides & Collagen",
+    "feat3D": "Peptides derived from rice, paired with collagen, aimed at improving skin elasticity and radiance."
   }
 };
 </script>
@@ -646,18 +629,18 @@ window.PAGE_I18N = {
       crumbHome: "首頁", crumbBrands: "品牌產品",
       storyEyebrow: "品牌故事",
       lineupEyebrow: "產品系列", lineupH2: "產品陣容",
-      lineupSub: "以下為產品版位範例，實際品項與圖片待補。",
-      featuresEyebrow: "產品特色", featuresH2: "為什麼選擇這個品牌",
-      specsEyebrow: "產品規格", specsH2: "規格與認證",
-      specName: "品名", specSize: "規格容量", specOrigin: "產地",
-      specShelf: "保存期限", specCert: "認證",
-      channelEyebrow: "銷售通路", channelH2: "哪裡買得到",
-      channelSub: "通路資訊待補，以下為版位示意。",
-      ch1: "連鎖零售", ch1d: "全台主要通路", ch2: "電商平台", ch2d: "線上購物通路",
-      ch3: "餐飲通路", ch3d: "餐廳與飲品店", ch4: "海外市場", ch4d: "亞太地區代理",
+      lineupSub: "NACIFIC 目前主打兩大系列：RICE+PEPTA 與 CICA+PDRN，分別針對彈潤與舒緩兩種保養訴求。",
+      lineupNote: "完整系列與最新品項，請參考 NACIFIC 官方網站。", lineupSiteLink: "前往 NACIFIC 官方網站",
+      featuresEyebrow: "成分科學", featuresH2: "兩大系列，各有主打成分",
+      np1S: "卸妝膏", np1T: "Rice Pepta Collagen Sherbet Cleansing Balm", np1D: "雪酪質地卸妝膏，米萃胜肽與膠原蛋白配方，深層清潔同時兼顧肌膚光澤。",
+      np2S: "精華液", np2T: "Rice Pepta Collagen Glow Milky Serum", np2D: "乳狀質地精華，米萃胜肽搭配膠原蛋白，加強肌膚光澤與彈性。",
+      np3S: "凝膠面膜", np3T: "Rice Pepta Collagen Gel Mask", np3D: "水凝膠面膜，米萃胜肽與膠原蛋白配方，密集保濕同時提升肌膚光澤。",
+      np4S: "化妝水", np4T: "CICA PDRN Toner", np4D: "積雪草與 PDRN 為核心，溫和舒緩同時補充水分，適合日常泛紅肌膚。",
+      np5S: "精華液", np5T: "CICA PDRN Serum", np5D: "品牌核心品項，積雪草與 PDRN 加強修護與舒緩，質地清爽好吸收。",
+      np6S: "乳霜", np6T: "CICA PDRN Cream", np6D: "鎖水收尾乳霜，維持肌膚屏障，舒緩日常乾燥與敏感狀況。",
       ctaEyebrow: "合作洽談", ctaH2: "想代理或引進這個品牌？",
       ctaP: "無論您是零售通路、餐飲業者或海外代理夥伴，我們都樂於一同討論合作方式。",
-      ctaBtn1: "聯絡我們", ctaBtn2: "回到品牌總覽",
+      ctaBtn1: "聯絡我們",
       sibEyebrow: "其他品牌", sibH2: "探索更多品牌",
       sibMore: "了解更多",
       footerTagline: "國際消費品開發、代理與市場拓展夥伴。",
@@ -678,18 +661,18 @@ window.PAGE_I18N = {
       crumbHome: "Home", crumbBrands: "Our Brands",
       storyEyebrow: "Brand Story",
       lineupEyebrow: "Product Range", lineupH2: "The Lineup",
-      lineupSub: "Placeholder slots below — final products and photography to be added.",
-      featuresEyebrow: "Why It Works", featuresH2: "What Sets This Brand Apart",
-      specsEyebrow: "Specifications", specsH2: "Specs & Certifications",
-      specName: "Product name", specSize: "Size / volume", specOrigin: "Country of origin",
-      specShelf: "Shelf life", specCert: "Certifications",
-      channelEyebrow: "Availability", channelH2: "Where To Buy",
-      channelSub: "Channel details to be confirmed — layout shown for reference.",
-      ch1: "Retail Chains", ch1d: "Major retailers nationwide", ch2: "E-commerce", ch2d: "Online marketplaces",
-      ch3: "Foodservice", ch3d: "Restaurants & beverage bars", ch4: "Export Markets", ch4d: "Asia-Pacific distribution",
+      lineupSub: "NACIFIC's current focus is two lines: RICE+PEPTA and CICA+PDRN, for elasticity and soothing care respectively.",
+      lineupNote: "For the full range and latest additions, see NACIFIC's official website.", lineupSiteLink: "Visit the NACIFIC Official Site",
+      featuresEyebrow: "Ingredient Science", featuresH2: "Two Lines, Two Signature Ingredients",
+      np1S: "Cleansing Balm", np1T: "Rice Pepta Collagen Sherbet Cleansing Balm", np1D: "A sherbet-textured cleansing balm with rice peptides and collagen, for deep cleansing that still leaves skin glowing.",
+      np2S: "Serum", np2T: "Rice Pepta Collagen Glow Milky Serum", np2D: "A milky-textured serum pairing rice peptides with collagen for added radiance and elasticity.",
+      np3S: "Gel Mask", np3T: "Rice Pepta Collagen Gel Mask", np3D: "A hydrogel sheet mask with rice peptides and collagen, for intensive hydration and added radiance.",
+      np4S: "Toner", np4T: "CICA PDRN Toner", np4D: "Built around centella and PDRN, gently soothing while hydrating — suited to everyday redness.",
+      np5S: "Serum", np5T: "CICA PDRN Serum", np5D: "The line's hero product — centella and PDRN for repair and calm, in a light, fast-absorbing texture.",
+      np6S: "Cream", np6T: "CICA PDRN Cream", np6D: "A finishing cream that locks in moisture, supports the skin barrier and eases everyday dryness and sensitivity.",
       ctaEyebrow: "Partnership", ctaH2: "Interested in carrying this brand?",
       ctaP: "Whether you are a retailer, a foodservice operator or an overseas distributor, we'd be glad to talk it through.",
-      ctaBtn1: "Contact Us", ctaBtn2: "Back to All Brands",
+      ctaBtn1: "Contact Us",
       sibEyebrow: "More Brands", sibH2: "Explore Our Other Brands",
       sibMore: "Learn more",
       footerTagline: "Your partner for international consumer goods development, distribution, and market expansion.",
@@ -791,12 +774,31 @@ window.PAGE_I18N = {
   // When a page is restored from bfcache (e.g. tapping the back button after
   // visiting another page), Safari sometimes fails to re-layout grid/flex
   // rows that contain images, even with width/height set on every <img>.
-  // Forcing a reflow on restore reliably fixes it.
+  // A whole-body reflow isn't always enough to invalidate Safari's cached
+  // track sizing for a NESTED grid/flex container, so each image-holding
+  // row is force-reflowed individually as well.
+  var REFLOW_SELECTORS = '.dining-logos, .about-content-grid, .biz-grid, ' +
+    '.brand-grid, .cap-grid, .footer-grid, .channel-row, .collab-grid, ' +
+    '.lineup-grid, .feature-grid, .story-grid, .siblings, .partner, ' +
+    '.approach-grid, .product-grid, .partner-logo, .cobrand-grid';
+
+  function forceReflow() {
+    document.querySelectorAll(REFLOW_SELECTORS).forEach(function (el) {
+      el.style.display = 'none';
+      void el.offsetHeight;
+      el.style.display = '';
+    });
+    document.body.style.display = 'none';
+    void document.body.offsetHeight;
+    document.body.style.display = '';
+  }
+
   window.addEventListener('pageshow', function (e) {
     if (e.persisted) {
-      document.body.style.display = 'none';
-      void document.body.offsetHeight; // force reflow
-      document.body.style.display = '';
+      forceReflow();
+      // images can still be mid-decode the instant pageshow fires;
+      // reflow again shortly after to catch any that settle late
+      setTimeout(forceReflow, 60);
     }
   });
 </script>
